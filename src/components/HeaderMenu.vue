@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div class="navbar navbar-expand-md header-menu-one bg-light">
+<div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
@@ -197,14 +196,12 @@
                 </ul>
             </div>
         </div>
-    </div>
 </template>
 <script>
 // @ is an alias to /src
 
 export default {
   name: 'HeaderMenu',
-
 }
 </script>
 <style scoped>

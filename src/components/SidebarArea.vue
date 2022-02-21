@@ -1,5 +1,4 @@
 <template>
-    <div>
             <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
@@ -209,7 +208,7 @@
                     </ul>
                 </div>
             </div>
-    </div>
+
 </template>
 <script>
 // @ is an alias to /src
