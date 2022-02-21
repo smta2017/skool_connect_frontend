@@ -1,16 +1,18 @@
 <template>
-    <!-- Preloader Start Here -->
-   <!-- <div id="preloader"></div>-->
-    <!-- Preloader End Here -->
-    <div id="wrapper" class="wrapper bg-ash">
-        
-       <!-- Header Menu Area Start Here -->
-        <HeaderMenu />
-        <!-- Header Menu Area End Here -->
+    <div>
+        <!-- Preloader Start Here -->
+        <div id="preloader"></div>
+        <!-- Preloader End Here -->
+        <div id="wrapper" class="wrapper bg-ash">
 
-        <!-- Page Area Start Here -->
-        <PageArea />
-        <!-- Page Area End Here -->
+        <!-- Header Menu Area Start Here -->
+            <HeaderMenu />
+            <!-- Header Menu Area End Here -->
+
+            <!-- Page Area Start Here -->
+            <PageArea />
+            <!-- Page Area End Here -->
+        </div>
     </div>
 </template>
 
