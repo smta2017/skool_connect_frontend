@@ -1,5 +1,5 @@
 <template>
-                    <div class="row gutters-20">
+                    
                     <div class="col-xl-3 col-sm-6 col-12">
                         <div class="dashboard-summery-one mg-b-20">
                             <div class="row align-items-center">
@@ -18,9 +18,6 @@
                         </div>
                     </div>
 
-
-
-                </div>
 </template>
 <script>
 // @ is an alias to /src
@@ -29,7 +26,7 @@ export default {
   name: 'DashboardSummery',
   props: ['user_desc'],
     methods: {
-        getIconColor(user_type) {console.log(user_type);
+        getIconColor(user_type) {
             switch(user_type) {
             case 'student':
                 return 'item-icon bg-light-green';
