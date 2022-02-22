@@ -56,21 +56,19 @@
                             <div class="item-content">
                                 <ul class="settings-list">
                                     <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
-                                    <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
-                                    <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
-                                    <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                    
                                     <li><a href="login.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li class="navbar-item dropdown header-message">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       <!-- <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             <i class="far fa-envelope"></i>
                             <div class="item-title d-md-none text-16 mg-l-10">Message</div>
                             <span>5</span>
-                        </a>
+                        </a> -->
 
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="item-header">
@@ -188,9 +186,7 @@
                         data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Spanish</a>
-                            <a class="dropdown-item" href="#">Franchis</a>
-                            <a class="dropdown-item" href="#">Chiness</a>
+                            <a class="dropdown-item" href="#">Arabic</a>
                         </div>
                     </li>
                 </ul>

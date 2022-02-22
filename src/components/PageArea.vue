@@ -11,9 +11,9 @@
 
                 <!-- Dashboard summery End Here -->
                 <!-- Dashboard Content Start Here -->
-                <DashboardSummery/>
+                <!--<DashboardSummery/> -->
                 <!-- Dashboard Content End Here -->
-                
+                <router-view/>
                 <!-- Footer Area Start Here -->
                 <FooterArea />
                 <!-- Footer Area End Here -->
@@ -24,12 +24,12 @@
 // @ is an alias to /src
 import SidebarArea from '@/components/SidebarArea.vue'
 import BreadcubsArea from '@/components/BreadcubsArea.vue'
-import DashboardSummery from '@/components/DashboardSummery.vue'
+//import DashboardSummery from '@/components/DashboardSummery.vue'
 import FooterArea from '@/components/FooterArea.vue'
 export default {
   name: 'PageArea',
   components : {
-      SidebarArea,BreadcubsArea,DashboardSummery,FooterArea
+      SidebarArea,BreadcubsArea,/*DashboardSummery,*/FooterArea
   }
 
 }
