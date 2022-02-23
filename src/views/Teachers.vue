@@ -1,10 +1,13 @@
 <template>
-<div>
-    <DashboardSummery  :user_desc="user_desc"/>
-<!-- Exam Result Area Start Here -->
-<AllTeachers />
-<!-- Exam Result Area End Here -->
-</div>
+    <div>
+        <div class="row gutters-20">
+            <DashboardSummery  :user_desc="user_desc"/>
+        </div>
+
+        <!-- Exam Result Area Start Here -->
+        <AllTeachers />
+        <!-- Exam Result Area End Here -->
+    </div>
 </template>
 
 <script>
