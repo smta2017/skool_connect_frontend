@@ -1,24 +1,20 @@
 <template>
-<div class="dashboard-page-one">
-            <!-- Sidebar Area Start Here -->
-            <SidebarArea />
-            <!-- Sidebar Area End Here -->
-            <div class="dashboard-content-one">
-                <!-- Breadcubs Area Start Here -->
-                <BreadcubsArea />
-                <!-- Breadcubs Area End Here -->
-                <!-- Dashboard summery Start Here -->
+    <div class="dashboard-page-one">
+        <!-- Sidebar Area Start Here -->
+        <SidebarArea />
+        <!-- Sidebar Area End Here -->
+        <div class="dashboard-content-one">
+            <!-- Breadcubs Area Start Here -->
+            <BreadcubsArea />
+            <!-- Breadcubs Area End Here -->
 
-                <!-- Dashboard summery End Here -->
-                <!-- Dashboard Content Start Here -->
-                <!--<DashboardSummery/> -->
-                <!-- Dashboard Content End Here -->
-                <router-view/>
-                <!-- Footer Area Start Here -->
-                <FooterArea />
-                <!-- Footer Area End Here -->
-            </div>
+            <router-view/>
+                
+            <!-- Footer Area Start Here -->
+            <FooterArea />
+            <!-- Footer Area End Here -->
         </div>
+    </div>
 </template>
 <script>
 // @ is an alias to /src

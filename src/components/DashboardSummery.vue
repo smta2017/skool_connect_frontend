@@ -1,23 +1,25 @@
 <template>
-                    
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="dashboard-summery-one mg-b-20">
-                            <div class="row align-items-center">
-                                <div class="col-6">
-                                    <div v-bind:class="getIconColor(this.user_desc.user_type)">
-                                        <i v-bind:class="getIcon(this.user_desc.user_type)"></i>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="item-content">
-                                        <div class="item-title">{{this.user_desc.user_name}}</div>
-                                        <div class="item-number"><span class="counter" data-num="150000">{{this.user_desc.user_count}}</span></div>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="col-xl-3 col-sm-6 col-12">
+        <div class="dashboard-summery-one mg-b-20">
+            <div class="row align-items-center">
+               <div class="col-6">
+                    <div v-bind:class="getIconColor(this.user_desc.user_type)">
+                        <i v-bind:class="getIcon(this.user_desc.user_type)"></i>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="item-content">
+                        <div class="item-title">
+                            {{this.user_desc.user_name}}
+                        </div>
+                        <div class="item-number">
+                            <span class="counter" data-num="150000">{{this.user_desc.user_count}}</span>
                         </div>
                     </div>
-
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 // @ is an alias to /src
