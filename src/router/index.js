@@ -5,6 +5,8 @@ import Students from '../views/Students.vue'
 import Parents from '../views/Parents.vue'
 import Teachers from '../views/Teachers.vue'
 import Admission from '../views/Admission.vue'
+import AddStudent from '../views/AddStudent.vue'
+import EditStudent from '../views/EditStudent.vue'
 
 Vue.use(VueRouter)
 
@@ -41,7 +43,18 @@ const routes = [
     path: '/admission',
     name: 'Admission',
     component: Admission
-  },     
+  },
+  {
+    path: '/add_student',
+    name: 'AddStudent',
+    component: AddStudent
+  },
+  {
+    path: '/add_student',
+    name: 'AddStudent',
+    component: AddStudent
+  },
+  {path: '/edit_student/:stdid', name: 'EditStudent', component: EditStudent}     
 ]
 
 const router = new VueRouter({
