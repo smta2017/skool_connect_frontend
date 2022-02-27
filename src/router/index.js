@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Students from '../views/Students.vue'
 import Parents from '../views/Parents.vue'
 import Teachers from '../views/Teachers.vue'
+import Admission from '../views/Admission.vue'
 
 Vue.use(VueRouter)
 
@@ -35,7 +36,12 @@ const routes = [
     path: '/teachers',
     name: 'Teachers',
     component: Teachers
-  },    
+  },
+  {
+    path: '/admission',
+    name: 'Admission',
+    component: Admission
+  },     
 ]
 
 const router = new VueRouter({
