@@ -7,6 +7,12 @@
                 <div class="heading-layout1">
                     <div class="item-title">
                         <h3>All Students Data</h3>
+                        <li class="nav-item">
+                                    <router-link :to="{ name: 'AddStudent'}" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>
+                                        Add Student
+                                    </router-link>
+                                </li>
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -36,118 +42,96 @@
                             </div>
                         </div>
                     </form>
-                    <div class="table-responsive result-table-box">
-                        <table class="table display data-table text-nowrap">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <div class="form-check">
-                                            <input type="checkbox"
-                                                class="form-check-input checkAll">
-                                            <label class="form-check-label">ID</label>
-                                        </div>
-                                    </th>
-                                    <th>Exam Name</th>
-                                    <th>Subject</th>
-                                    <th>Grade</th>
-                                    <th>Percent</th>
-                                    <th>Date</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input">
-                                            <label class="form-check-label">#0021</label>
-                                        </div>
-                                    </td>
-                                    <td>Class Test</td>
-                                    <td>English</td>
-                                    <td>A</td>
-                                    <td>99.00 > 100</td>
-                                    <td>22/02/2019</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle"
-                                                data-toggle="dropdown" aria-expanded="false">
-                                                <span
-                                                    class="flaticon-more-button-of-three-dots"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                    <div class="table-responsive Student_data_table">
+                            <table class="table display data-table text-nowrap all_student">
+                                <thead>
+                                    <tr>
+                                   
+                                        <!--<th>Applecation ID</th> -->
+                                        <!--<th>School ID</th>-->
+                                        <!--<th>Medical</th>-->
+                                        <th>Custody</th>
+                                        <th>Student Name</th>
+                                        <th>Family</th>
+                                        <th>Division</th>
+                                        <th>Grade</th>
+                                        <th>Class</th>
+                                        <th>Religon</th>
+										<!--<th>Sibiling</th> -->
+										<!--<th>Exempted</th> -->										
+										<th>Year Joined</th>
+										<th>action</th>
+                                    </tr>
+                                </thead>
+                                <tbody :key="student.id" v-for="student in all_students">
+                                    <tr>
+                                        <!--<td>
+                                            {{student.code}}
+                                        </td> -->                                     
+                                        <!--<td >{{student.code}}</td> -->
+                                        <!-- <td class="student_medical"><i class="flaticon-doctor"></i></td>-->
+                                        <td>{{student.custody}}</td>
+                                        <td>{{student.first_name_en}} </td>
+                                        <td>{{student.last_name_en}}</td>
+                                        <td>{{student.division_id}}</td>
+                                        <td>{{student.grade_id}}</td>
+                                        <td>{{student.class_id}}</td>
+                                        <td>{{student.religion_id}}</td>
+										<!--<td>{{student.custody}}</td> -->
+										<!--<td>{{student.custody}}</td> -->
+										<td>{{student.created_at}}</td>
+								
+										
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <router-link class="dropdown-item" :to="'/edit_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Edit</router-link>
+                                                    <a class="dropdown-item" href="#"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Add to Class</a>
+													<a class="dropdown-item" href="#"><i class="fas fa-solid fa-door-open"></i>Assign to Home Room</a>
+															
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input">
-                                            <label class="form-check-label">#0022</label>
-                                        </div>
-                                    </td>
-                                    <td>Class Test</td>
-                                    <td>English</td>
-                                    <td>A</td>
-                                    <td>99.00 > 100</td>
-                                    <td>22/02/2019</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle"
-                                                data-toggle="dropdown" aria-expanded="false">
-                                                <span
-                                                    class="flaticon-more-button-of-three-dots"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+        </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
 <!-- Exam Result Area End Here -->
     
 </template>
 <script>
-
+import axios from 'axios';
 export default {
+    
   name: "AllStudents",
   data () {
     return {
       title: '',
-      status : ''
+      status : '',
+      all_students : []
     } 
   },
   async created () {
-    /*axios
-      .get('http://localhost/ConnectSkool_api/public/api/academic_years',{
+    axios
+      .get('http://3.219.94.115/api/v1/students',{
         headers: {
           'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
           'Accept' : 'application/json',
           'Content-Type' : 'application/x-www-form-urlencoded'
         }
       })
-      .then(response => (this.academic_years = response.data.data))
-      .catch(error => console.log(error)) */
+      .then(response => (this.all_students = response.data.data))
+      .catch(error => console.log(error))
   }  
 }
 </script>
