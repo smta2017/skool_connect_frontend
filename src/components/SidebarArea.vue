@@ -48,8 +48,10 @@
                                             class="fas fa-angle-right"></i>Student Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="admit-form.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Admission Form</a>
+                                    <router-link to="/admission" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>
+                                        Admission Form
+                                    </router-link>
                                 </li>
                                 <li class="nav-item">
                                     <a href="student-promotion.html" class="nav-link"><i
