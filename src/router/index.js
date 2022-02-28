@@ -7,6 +7,7 @@ import Teachers from '../views/Teachers.vue'
 import Admission from '../views/Admission.vue'
 import AddStudent from '../views/AddStudent.vue'
 import EditStudent from '../views/EditStudent.vue'
+import ShowStudent from '../views/ShowStudent.vue'
 
 Vue.use(VueRouter)
 
@@ -54,7 +55,16 @@ const routes = [
     name: 'AddStudent',
     component: AddStudent
   },
-  {path: '/edit_student/:stdid', name: 'EditStudent', component: EditStudent}     
+  {
+    path: '/edit_student/:stdid', 
+    name: 'EditStudent', 
+    component: EditStudent
+  },
+  {
+    path: '/show_student/:stdid', 
+    name: 'ShowStudent', 
+    component: ShowStudent
+  }     
 ]
 
 const router = new VueRouter({

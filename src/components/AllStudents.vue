@@ -90,8 +90,9 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <router-link class="dropdown-item" :to="'/edit_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Edit</router-link>
-                                                    <a class="dropdown-item" href="#"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Add to Class</a>
-													<a class="dropdown-item" href="#"><i class="fas fa-solid fa-door-open"></i>Assign to Home Room</a>
+                                                    <router-link class="dropdown-item" :to="'/show_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
+                                                    <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>
+                                                    
 															
                                                 </div>
                                             </div>
@@ -132,6 +133,27 @@ export default {
       })
       .then(response => (this.all_students = response.data.data))
       .catch(error => console.log(error))
+  },
+  methods : {
+      stdDelete(stdID) {
+          console.log(stdID)
+          axios
+            .delete('http://3.219.94.115/api/v1/students/'+stdID,{
+                headers: {
+                'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            })
+            .then((response)=> {
+                console.log(response)
+                response.status === 200
+                ? (this.all_students = this.all_students.filter((student) => student.id !== stdID))
+                : alert(response.data.message)
+            //this.$emit('add-academic-year', response.data.data)
+          })
+            .catch(error => console.log(error))
+      }
   }  
 }
 </script>
