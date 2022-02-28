@@ -91,9 +91,7 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <router-link class="dropdown-item" :to="'/edit_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Edit</router-link>
                                                     <router-link class="dropdown-item" :to="'/show_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
-                                                    <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>
-                                                    
-															
+                                                    <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>		
                                                 </div>
                                             </div>
                                         </td>
@@ -136,7 +134,8 @@ export default {
   },
   methods : {
       stdDelete(stdID) {
-          console.log(stdID)
+          //console.log(stdID)
+          
           axios
             .delete('http://3.219.94.115/api/v1/students/'+stdID,{
                 headers: {

@@ -13,7 +13,7 @@
                             aria-expanded="false">...</a>
 
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                            <router-link class="dropdown-item" :to="{ name: 'AddParent'}"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Add New Parent</router-link>
                             <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
                         </div>
@@ -40,34 +40,23 @@
                         <table class="table display data-table text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <div class="form-check">
-                                            <input type="checkbox"
-                                                class="form-check-input checkAll">
-                                            <label class="form-check-label">ID</label>
-                                        </div>
-                                    </th>
-                                    <th>Exam Name</th>
-                                    <th>Subject</th>
-                                    <th>Grade</th>
-                                    <th>Percent</th>
-                                    <th>Date</th>
-                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Marital Status</th>
+                                    <th>university</th>
+                                    <th>occupation</th>
+                                    <th>business_mobile</th>
+                                    <th>business_email</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody :key="parent.id" v-for="parent in all_parents">
                                 <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input">
-                                            <label class="form-check-label">#0021</label>
-                                        </div>
-                                    </td>
-                                    <td>Class Test</td>
-                                    <td>English</td>
-                                    <td>A</td>
-                                    <td>99.00 > 100</td>
-                                    <td>22/02/2019</td>
+                                    <td>{{parent.first_name_en}} {{parent.last_name_en}}</td>
+                                    <td>{{parent.marital_status_id}}</td>
+                                    <td>{{parent.university}}</td>
+                                    <td>{{parent.occupation}}</td>
+                                    <td>{{parent.business_mobile}}</td>
+                                    <td>{{parent.business_email}}</td>
                                     <td>
                                         <div class="dropdown">
                                             <a href="#" class="dropdown-toggle"
@@ -75,44 +64,11 @@
                                                 <span
                                                     class="flaticon-more-button-of-three-dots"></span>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input">
-                                            <label class="form-check-label">#0022</label>
-                                        </div>
-                                    </td>
-                                    <td>Class Test</td>
-                                    <td>English</td>
-                                    <td>A</td>
-                                    <td>99.00 > 100</td>
-                                    <td>22/02/2019</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle"
-                                                data-toggle="dropdown" aria-expanded="false">
-                                                <span
-                                                    class="flaticon-more-button-of-three-dots"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-times text-orange-red"></i>Close</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                <a class="dropdown-item" href="#"><i
-                                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                            </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <router-link class="dropdown-item" :to="'/edit_parent/' + parent.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Edit</router-link>
+                                                    <router-link class="dropdown-item" :to="'/show_parent/' + parent.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
+                                                    <a class="dropdown-item" href="#" v-on:click="parentDelete(parent.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>		
+                                                </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -128,26 +84,50 @@
     
 </template>
 <script>
-
+import axios from 'axios';
 export default {
+    
   name: "AllParents",
   data () {
     return {
       title: '',
-      status : ''
+      status : '',
+      all_parents : []
     } 
   },
   async created () {
-    /*axios
-      .get('http://localhost/ConnectSkool_api/public/api/academic_years',{
+    axios
+      .get('http://3.219.94.115/api/v1/parents',{
         headers: {
           'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
           'Accept' : 'application/json',
           'Content-Type' : 'application/x-www-form-urlencoded'
         }
       })
-      .then(response => (this.academic_years = response.data.data))
-      .catch(error => console.log(error)) */
+      .then(response => (this.all_parents = response.data.data))
+      .catch(error => console.log(error))
+  },
+  methods : {
+      parentDelete(parentID) {
+          //console.log(stdID)
+          
+          axios
+            .delete('http://3.219.94.115/api/v1/parents/'+parentID,{
+                headers: {
+                'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            })
+            .then((response)=> {
+                console.log(response)
+                response.status === 200
+                ? (this.all_parents = this.all_parents.filter((parent) => parent.id !== parentID))
+                : alert(response.data.message)
+            //this.$emit('add-academic-year', response.data.data)
+          })
+            .catch(error => console.log(error))
+      }
   }  
 }
 </script>

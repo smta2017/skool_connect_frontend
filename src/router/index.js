@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Students from '../views/Students.vue'
+
 import Parents from '../views/Parents.vue'
+import AddParent from '../views/AddParent.vue'
+import ShowParent from '../views/ShowParent.vue'
+import EditParent from '../views/EditParent.vue'
+
 import Teachers from '../views/Teachers.vue'
 import Admission from '../views/Admission.vue'
+
+import Students from '../views/Students.vue'
 import AddStudent from '../views/AddStudent.vue'
 import EditStudent from '../views/EditStudent.vue'
 import ShowStudent from '../views/ShowStudent.vue'
@@ -34,6 +40,21 @@ const routes = [
     path: '/parents',
     name: 'Parents',
     component: Parents
+  },
+  {
+    path: '/add_parent',
+    name: 'AddParent',
+    component: AddParent
+  },
+  {
+    path: '/edit_parent/:parentid', 
+    name: 'EditParent', 
+    component: EditParent
+  },
+  {
+    path: '/show_parent/:parentid', 
+    name: 'ShowParent', 
+    component: ShowParent
   },
   {
     path: '/teachers',
