@@ -1,7 +1,7 @@
 <template>
     <div class="col-xl-3 col-lg-6 col-12 form-group">
         <label>Division *</label>
-        <select name="division_id" class="select2" @change="updateValue($event)">
+        <select name="division_id" class="" @change="updateValue($event)">
             <option value="">Please Select Division *</option>
             <option :key="division.id" v-for="division in divisions" :value="division.id">{{ division.name }}</option>                                       
         </select>      

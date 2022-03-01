@@ -35,7 +35,7 @@
                     <label>Family Name (Arabic)*</label>
                     <input type="text" placeholder="" name="last_name_ar" v-model="form.last_name_ar" class="form-control">
                 </div>
-                <MaritalStatus @maritalStatus_change="MaritalStatusChange"/>
+                <MaritalStatus @maritalStatus_change="MaritalStatusChange" userType="parentType"/>
 				<div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label>University*</label>
                     <input type="text" placeholder="" name="university" v-model="form.university" class="form-control">
@@ -94,7 +94,7 @@ import MaritalStatus from '@/components/MaritalStatus.vue'
 import FormSaveResetBtns from '@/components/FormSaveResetBtns.vue'
 export default {
     name: 'AddStudentBasicInfo',
-    props: ['formType','StdId'],
+    props: ['parentType','StdId'],
     components : {
         MaritalStatus,FormSaveResetBtns
     },

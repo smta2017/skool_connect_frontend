@@ -1,7 +1,7 @@
 <template>
     <div class="col-xl-3 col-lg-6 col-12 form-group">
         <label>Select Spoken *</label>
-        <select name="lang_id" class="select2" @change="updateValue($event)">
+        <select name="lang_id" class="" @change="updateValue($event)">
             <option value="">Please Select Language *</option>
             <option :key="language.id" v-for="language in languages" :value="language.id">{{ language.name }}</option>                                     
         </select>     

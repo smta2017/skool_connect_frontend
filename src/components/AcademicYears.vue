@@ -1,7 +1,7 @@
 <template>
   <div class="col-xl-3 col-lg-6 col-12 form-group">
     <label>Year *</label>
-    <select name="academic_year_applying_id" class="select2" @change="updateValue($event)">
+    <select name="academic_year_applying_id" class="" @change="updateValue($event)">
       <option value="">Please Select School *</option>
       <option :key="academic_year.id" v-for="academic_year in academic_years" :value="academic_year.id">{{ academic_year.name }}</option>                                       
     </select>    

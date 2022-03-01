@@ -40,8 +40,10 @@
                             <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
-                                    <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                        Students</a>
+                                    <router-link to="/admission_list" class="nav-link">
+                                        <i class="fas fa-angle-right"></i>
+                                        Students
+                                    </router-link>
                                 </li>
                                 <li class="nav-item">
                                     <a href="student-details.html" class="nav-link"><i

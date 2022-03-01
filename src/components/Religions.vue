@@ -1,7 +1,7 @@
 <template>
   <div class="col-xl-3 col-lg-6 col-12 form-group">
     <label>Religion *</label>
-    <select name="religion_id" class="select2" @change="updateValue($event)">
+    <select name="religion_id" class="" @change="updateValue($event)">
       <option value="">Please Select Religion *</option>
       <option :key="religion.id" v-for="religion in religions" :value="religion.id">{{ religion.name }}</option>                                       
     </select>    

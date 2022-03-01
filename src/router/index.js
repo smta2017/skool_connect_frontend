@@ -8,8 +8,11 @@ import ShowParent from '../views/ShowParent.vue'
 import EditParent from '../views/EditParent.vue'
 
 import Teachers from '../views/Teachers.vue'
-import Admission from '../views/Admission.vue'
 
+
+import Admission from '../views/Admission.vue'
+import AdmissionList from '../views/AdmissionList.vue'
+import AdmissionDetails from '../views/AdmissionDetails'
 import Students from '../views/Students.vue'
 import AddStudent from '../views/AddStudent.vue'
 import EditStudent from '../views/EditStudent.vue'
@@ -67,9 +70,14 @@ const routes = [
     component: Admission
   },
   {
-    path: '/add_student',
-    name: 'AddStudent',
-    component: AddStudent
+    path: '/admission_list',
+    name: 'AdmissionList',
+    component: AdmissionList
+  },
+  {
+    path: '/admission_details/:id',
+    name: 'AdmissionDetails',
+    component: AdmissionDetails
   },
   {
     path: '/add_student',
