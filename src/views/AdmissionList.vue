@@ -43,6 +43,8 @@
                                         <th>Student Name</th>
                                         <th>Parents</th>
                                         <th>Status</th>
+                                        <!--<th>Principal Recommendation</th>
+                                        <th>Principal Ability</th>-->
                                     </tr>
                                 </thead>
                                 <tbody :key="student.id" v-for="student in applicatioInfo">
@@ -50,7 +52,9 @@
 
                                         <td>{{student.student.first_name_en}} {{student.student.first_name_en}} </td>
                                         <td>{{student.parent1.last_name_en}} {{student.parent1.first_name_en}} <br> {{student.parent2.last_name_en}} {{student.parent2.first_name_en}}</td>
-                                        <td>{{student.admission_status_id}}</td>
+                                        <td>{{student.admission_status.name}}</td>
+                                        <!--<td>{{student.principal_recommendation}}</td>
+                                        <td>{{student.principal_ability}}</td>-->
 								
 										
                                         <td>
@@ -60,7 +64,7 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item modal-trigger" href="" data-toggle="modal" data-target="#sign-up"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Evaliuation Card</a>
+                                                    <a class="dropdown-item modal-trigger" href="" data-toggle="modal" data-target="#sign-up"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Evaluation Card</a>
                                                     <router-link class="dropdown-item" :to="'/admission_details/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
                                                     <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>		
                                                 </div>
