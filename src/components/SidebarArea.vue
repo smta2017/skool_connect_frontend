@@ -42,13 +42,13 @@
                                 <li class="nav-item">
                                     <router-link to="/admission_list" class="nav-link">
                                         <i class="fas fa-angle-right"></i>
-                                        Students
+                                        Student Details
                                     </router-link>
                                 </li>
-                                <li class="nav-item">
+                                <!--<li class="nav-item">
                                     <a href="student-details.html" class="nav-link"><i
                                             class="fas fa-angle-right"></i>Student Details</a>
-                                </li>
+                                </li>-->
                                 <li class="nav-item">
                                     <router-link to="/admission" class="nav-link">
                                         <i class="fas fa-angle-right"></i>

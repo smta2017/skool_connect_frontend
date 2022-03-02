@@ -60,17 +60,18 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <router-link class="dropdown-item" :to="'/edit_student/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Edit</router-link>
+                                                    <a class="dropdown-item modal-trigger" href="" data-toggle="modal" data-target="#sign-up"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Evaliuation Card</a>
                                                     <router-link class="dropdown-item" :to="'/admission_details/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
                                                     <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>		
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
+                                    <EvaluationCard :admissionData="student" v-if="student.id < 3"/>
                                 </tbody>
                             </table>
                         </div>
-        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,14 +80,13 @@
 
 <script>
 // @ is an alias to /src
-//import AllParents from '@/components/AllParents.vue'
-//import DashboardSummery from '@/components/DashboardSummery.vue'
+import EvaluationCard from '@/components/EvaluationCard.vue'
 import axios from 'axios';
 export default {
     name: 'AdmissionList',
     
     components : {
-        //AllParents,DashboardSummery
+        EvaluationCard
     },
     data: function () {
         return {
