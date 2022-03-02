@@ -1,5 +1,5 @@
 <template>
-<div class="modal sign-up-modal fade" id="sign-up" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal sign-up-modal fade" :id="'sign-up' + this.admissionData.id" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered evaluation-card" role="document">
         <div class="modal-content">
             <form class="new-added-form" v-on:submit="updateEvaluationCard">
@@ -95,7 +95,14 @@
   
                                                     </div>
                                                 </div>
-                                                <SchoolBuildings  :reason="reason[0]" @assessmentOneBuildingChange="assessmentOneBuildingChange"/>
+                                                <!-- <SchoolBuildings  :reason="reason[0]" @assessmentOneBuildingChange="assessmentOneBuildingChange"/> -->
+                                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                                    <label>School Buildings *</label>
+                                                    <select class="select2" v-model="evaluationCardInfo.exam_building_id">
+                                                        <option value="">Please Select School Building *</option>
+                                                        <option :key="building.id" v-for="building in schoolBuildings" :value="building.id">{{ building.name }}</option>                                       
+                                                    </select>    
+                                                </div>                                                
 
                                                 <div class="col-xl-3 col-lg-6 col-12 form-group pt-5">
                                                     <h6>Date of assessment2</h6>
@@ -115,8 +122,15 @@
                                                     </div>
                                                 </div>
 			
-                                                <SchoolBuildings  :reason="reason[1]" @assessmentTwoBuildingChange="assessmentTwoBuildingChange"/>
-                                                
+                                                <!--<SchoolBuildings  :reason="reason[1]" @assessmentTwoBuildingChange="assessmentTwoBuildingChange"/> -->
+                                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                                    <label>School Buildings *</label>
+                                                    <select class="select2" v-model="evaluationCardInfo.exam_building2_id">
+                                                        <option value="">Please Select School Building *</option>
+                                                        <option :key="building.id" v-for="building in schoolBuildings" :value="building.id">{{ building.name }}</option>                                       
+                                                    </select>    
+                                                </div> 
+
                                                 <div class="col-xl-3 col-lg-6 col-12 form-group pt-5">
                                                     <h6>Parents meeting  </h6>
                                                 </div>
@@ -134,7 +148,14 @@
                                                     </div>
                                                 </div>
 			
-                                                <SchoolBuildings  :reason="reason[2]" @parentMeetingBuildingChange="parentMeetingBuildingChange"/>
+                                                <!-- <SchoolBuildings  :reason="reason[2]" @parentMeetingBuildingChange="parentMeetingBuildingChange"/> -->
+                                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                                    <label>School Buildings *</label>
+                                                    <select class="select2" v-model="evaluationCardInfo.meeting_building_id">
+                                                        <option value="">Please Select School Building *</option>
+                                                        <option :key="building.id" v-for="building in schoolBuildings" :value="building.id">{{ building.name }}</option>                                       
+                                                    </select>    
+                                                </div>                                                
                                                 <div class="col-lg-12 col-12 form-group">
                                                     <label>Registrar Note</label>
                                                     <textarea class="textarea form-control evalution-txt" name="message" id="form-message" cols="10" rows="3" v-model="evaluationCardInfo.reg_notes"></textarea>
@@ -163,7 +184,7 @@
                                                 <select class="" v-model="evaluationCardInfo.entrance_recommendation">
                                                     <option value="">Select</option>
                                                     <option value="R1">R1 </option>
-                                                    <option value="R2">R1</option>   
+                                                    <option value="R2">R2</option>   
                                                 </select>
                                             </div>
                                             <div class="col-lg-12 col-12 form-group">
@@ -240,12 +261,12 @@
 </template>
 <script>
 import axios from 'axios';
-import SchoolBuildings from '@/components/SchoolBuildings.vue'
+//import SchoolBuildings from '@/components/SchoolBuildings.vue'
 import FormSaveResetBtns from '@/components/FormSaveResetBtns.vue'
 export default {
     name: 'EvalutaionCard',
     components: {
-        SchoolBuildings,FormSaveResetBtns
+        /*SchoolBuildings,*/FormSaveResetBtns
     },
     props: ['admissionData'],
         data: function () {
@@ -254,11 +275,11 @@ export default {
             //defulat_building : [this.evaluationCardInfo.exam_building_id,this.evaluationCardInfo.exam_building2_id,this.evaluationCardInfo.meeting_building_id],
             evaluationCardInfo : {
                 "id": "",
-                "exam_date": "",
+                "exam_date": "2020-02-20",
                 "exam_building_id": "",
-                "exam_date2": "",
+                "exam_date2": "2020-03-01",
                 "exam_building2_id": "",
-                "meeting_date": "",
+                "meeting_date": "2020-03-05",
                 "meeting_building_id": "",
                 "reg_notes": "",
                 "entrance_ability": "",
@@ -269,15 +290,17 @@ export default {
                 "principal_ability": "",
                 "director_comment": "",
                 "application_status": "",
-                "admission_id": "",
+                //"admission_id": this.admissionData.id,
                 "created_at": "",
                 "updated_at": ""
-            }
+            },
+            "schoolBuildings" : []
         }
     },
     async created () {
         console.log(this.admissionData.admission_status.name)
-        this.admissionData.id === 1 ? this.getEvalutaionCarsData() : ''
+        //this.admissionData.id === 1 ? this.getEvalutaionCarsData() : ''
+        this.getSchoolBuilding()
   },
     methods : {
         getEvalutaionCarsData() {
@@ -291,6 +314,17 @@ export default {
             })
             .then(response => (this.evaluationCardInfo = response.data.data))
             .catch(error => console.log(error))          
+        },
+        async getSchoolBuilding() {
+            axios.get('http://3.219.94.115/api/v1/schoolBuildings',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.schoolBuildings = response.data.data))
+        .catch(error => console.log(error))            
         },
         async updateEvaluationCard(e) {
             e.preventDefault()
