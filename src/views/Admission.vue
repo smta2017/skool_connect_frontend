@@ -165,11 +165,11 @@
                 <div class="">
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Foreigner ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="foreigner" v-model="form.student.foreigner" id="foreignerinlineRadio1" value="1" required>
                            <label class="form-check-label " for="foreignerinlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                             <input class="" type="radio" name="foreigner" v-model="form.student.foreigner" id="foreignerinlineRadio2" value="0" required>
                             <label class="form-check-label" for="foreignerinlineRadio2">No</label>
                         </div>
@@ -177,11 +177,11 @@
 
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Egypt Returning ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="egy_returning" v-model="form.student.egy_returning" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                             <input class="" type="radio" name="egy_returning" v-model="form.student.egy_returning" id="inlineRadio2" value="0" required>
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -189,11 +189,11 @@
 
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Transfer From Cairo ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="transfer_from_cairo" v-model="form.student.transfer_from_cairo" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                             <input class="" type="radio" name="transfer_from_cairo" v-model="form.student.transfer_from_cairo" id="inlineRadio2" value="0" required>
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -202,11 +202,11 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Staff Child ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="staff_child" v-model="form.student.staff_child" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                             <input class="" type="radio" name="staff_child" v-model="form.student.staff_child" id="inlineRadio2" value="0" required>
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -220,11 +220,11 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Learn Support ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="learn_support" v-model="form.student.learn_support" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="form-check form-check-inline ">
                             <input class="" type="radio" name="learn_support" v-model="form.student.learn_support" id="inlineRadio2" value="0" required>
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -327,11 +327,11 @@
 				</div>
                 <div class="col-xl-3 col-lg-12 col-12 form-group">
 					<label class="">alumni ?</label>
-                    <div class="form-check form-check-inline Custom_Radio">
+                    <div class="form-check form-check-inline ">
                         <input class="" type="radio" name="alumni1" v-model="form.parent1.alumni"  value="1">
                         <label class="form-check-label " for="inlineRadio1">Yes</label>
                     </div>
-                    <div class="form-check form-check-inline Custom_Radio">
+                    <div class="form-check form-check-inline ">
                         <input class="" type="radio" name="alumni1" v-model="form.parent1.alumni" value="0">
                         <label class="form-check-label" for="inlineRadio2">No</label>
                     </div>
@@ -423,15 +423,15 @@
 				</div>
                 <div class="col-xl-3 col-lg-12 col-12 form-group">
 					<label class="">alumni ?</label>
-                    <div class="form-check form-check-inline Custom_Radio">
+                    <div class="form-check form-check-inline ">
                         <input class="" type="radio" v-model="form.parent2.alumni"  id="inlineRadio1-2" value="1" required>
                         <label class="form-check-label " for="inlineRadio1-2">Yes</label>
                     </div>
-                    <div class="form-check form-check-inline Custom_Radio">
+                    <div class="form-check form-check-inline ">
                         <input class="" type="radio" v-model="form.parent2.alumni" id="inlineRadio2-2" value="0" required>
                         <label class="form-check-label" for="inlineRadio2-2">No</label>
                     </div>
-                </div>                            1    
+                </div>                           
             </div> 
 </div>
              
@@ -467,17 +467,106 @@ export default {
         return {
             parentType : ['father','mother'] ,
             form: {
-                "student": 
-                { "first_name_en": "","middle_name_en": "","last_name_en": "","first_name_ar": "","middle_name_ar": "","last_name_ar": "","division_id": "","grade_id": "","class_id": "","passport_no": "","birth_date": "","birth_place": "","october_age_date": "","academic_year_applying_id":"","nationality_id": "","gender_id": "","bus_id": "","religion_id": "","previous_school_nursery": "","address": "","city": "","email": "","mobile": "","lang_id": "","user_id": "55","birth_certificate": "","academic_house": "","report_cards": "","referance_letter": "","referance_name": "","referance_email": "","referance_phone": "","enroll_date": "","custody": "","foreigner": "","egy_returning": "","transfer_from_cairo": "","staff_child": "","staff_no": "","learn_support": "","learn_support_details": "","photo": "","code": "","national_no": "","submit_date" : ""}
-                ,
-                "parent1": 
-                {"first_name_en": "","middle_name_en": "","last_name_en": "","first_name_ar": "","middle_name_ar": "","last_name_ar": "","marital_status_id": "","university": "","occupation": "","employer": "","type_of_business": "","business_address": "","business_mobile": "","business_email":"","alumni": "","class_off": "","type": "","school": ""}
-                ,
-                "parent2": 
-                {"first_name_en": "","middle_name_en": "","last_name_en": "","first_name_ar": "","middle_name_ar": "","last_name_ar": "","marital_status_id": "","university": "","occupation": "","employer": "","type_of_business": "","business_address": "","business_mobile": "","business_email":"","alumni": "","class_off": "","type": "","school": ""}
-                ,
-                "student_id" : "50","parent1_id" : "55","parent2_id" : "56","admission_status_id" : "55"
-            }     
+      //"id": 1,
+      "student": {
+       // "id": 9,
+        "first_name_en": "Marwaaaaaa",
+        "middle_name_en": "temporibus",
+        "last_name_en": "aliquid",
+        "first_name_ar": "perferendis",
+        "middle_name_ar": "iste",
+        "last_name_ar": "est",
+        "division_id": 5,
+        "grade_id": 5,
+        "class_id": 6,
+        "national_no": "earum",
+        "passport_no": "repellat",
+        "birth_date": "1999-05-24",
+        "birth_place": "illum",
+        "october_age_date": "2009-05-10",
+        "academic_year_applying_id": 6,
+        "nationality_id": 5,
+        "gender_id": 8,
+        "bus_id": 8,
+        "religion_id": 8,
+        "previous_school_nursery": "omnis",
+        "address": "et",
+        "city": "rerum",
+        "email": "iusto@fgh.com",
+        "mobile": "et",
+        "submit_date": "2006-01-12",
+        "photo": "soluta",
+        "code": "vero",
+        "lang_id": 8,
+        "birth_certificate": "est",
+        "academic_house": "quaerat",
+        "report_cards": "expedita",
+        "referance_letter": "eligendi",
+        "referance_name": "provident",
+        "referance_email": "alias@ggg.com",
+        "referance_phone": "ut",
+        "enroll_date": "2020-09-04",
+        "custody": "et",
+        "foreigner": 0,
+        "egy_returning": 1,
+        "transfer_from_cairo": 0,
+        "staff_child": 0,
+        "staff_no": "atque",
+        "learn_support": 0,
+        "learn_support_details": "et",
+        "user_id" :5,
+      },
+      "parent1": {
+        //"id": 18,
+        "first_name_en": "molestiae",
+        "middle_name_en": "dolore",
+        "last_name_en": "quod",
+        "first_name_ar": "quia",
+        "middle_name_ar": "sapiente",
+        "last_name_ar": "repellendus",
+        "marital_status_id": 8,
+        "university": "soluta",
+        "occupation": "ipsa",
+        "employer": "veniam",
+        "type_of_business": "et",
+        "business_address": "vitae",
+        "business_mobile": "et",
+        "business_email": "libero@gh.com",
+        "alumni": 1,
+        "class_off": "necessitatibus",
+        "type": "voluptas",
+        "school": "sit"
+      },
+      "parent2": {
+        //"id": 5,
+        "first_name_en": "voluptatem",
+        "middle_name_en": "voluptatibus",
+        "last_name_en": "ipsa",
+        "first_name_ar": "voluptas",
+        "middle_name_ar": "earum",
+        "last_name_ar": "vel",
+        "marital_status_id": 9,
+        "university": "assumenda",
+        "occupation": "nostrum",
+        "employer": "dolorem",
+        "type_of_business": "accusamus",
+        "business_address": "voluptas",
+        "business_mobile": "cupiditate",
+        "business_email": "libero@gh.com",
+        "alumni": 1,
+        "class_off": "aut",
+        "type": "aut",
+        "school": "exercitationem"
+      },
+      "student_id" : "0","parent1_id" : "0","parent2_id" : "0","admission_status_id" : "0"
+      /*,
+      "admission_status": {
+        "id": 12,
+        "name": "iure",
+        "created_at": "1972-04-03T17:38:45.000000Z",
+        "updated_at": "1982-07-12T22:43:19.000000Z"
+      }*/
+    }     
         }
     },
     methods: {

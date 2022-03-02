@@ -95,7 +95,7 @@
   
                                                     </div>
                                                 </div>
-                                                <SchoolBuildings :reason="reason[0]" @assessmentOneBuildingChange="assessmentOneBuildingChange"/>
+                                                <SchoolBuildings  :reason="reason[0]" @assessmentOneBuildingChange="assessmentOneBuildingChange"/>
 
                                                 <div class="col-xl-3 col-lg-6 col-12 form-group pt-5">
                                                     <h6>Date of assessment2</h6>
@@ -115,7 +115,7 @@
                                                     </div>
                                                 </div>
 			
-                                                <SchoolBuildings :reason="reason[1]" @assessmentTwoBuildingChange="assessmentTwoBuildingChange"/>
+                                                <SchoolBuildings  :reason="reason[1]" @assessmentTwoBuildingChange="assessmentTwoBuildingChange"/>
                                                 
                                                 <div class="col-xl-3 col-lg-6 col-12 form-group pt-5">
                                                     <h6>Parents meeting  </h6>
@@ -134,7 +134,7 @@
                                                     </div>
                                                 </div>
 			
-                                                <SchoolBuildings :reason="reason[2]" @parentMeetingBuildingChange="parentMeetingBuildingChange"/>
+                                                <SchoolBuildings  :reason="reason[2]" @parentMeetingBuildingChange="parentMeetingBuildingChange"/>
                                                 <div class="col-lg-12 col-12 form-group">
                                                     <label>Registrar Note</label>
                                                     <textarea class="textarea form-control evalution-txt" name="message" id="form-message" cols="10" rows="3" v-model="evaluationCardInfo.reg_notes"></textarea>
@@ -251,6 +251,7 @@ export default {
         data: function () {
         return {
             reason : ['assessment1','assessment2','parentsMeeting'],
+            //defulat_building : [this.evaluationCardInfo.exam_building_id,this.evaluationCardInfo.exam_building2_id,this.evaluationCardInfo.meeting_building_id],
             evaluationCardInfo : {
                 "id": "",
                 "exam_date": "",
@@ -295,7 +296,7 @@ export default {
             e.preventDefault()
             console.log(this.evaluationCardInfo)
                         e.preventDefault()     
-            axios.put('http://3.219.94.115/api/v1/evaluationCards',
+            axios.put('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.id,
             this.evaluationCardInfo,
             {
             headers: {

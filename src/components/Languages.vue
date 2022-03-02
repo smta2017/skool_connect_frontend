@@ -3,6 +3,7 @@
         <label>Select Spoken *</label>
         <select name="lang_id" class="" @change="updateValue($event)">
             <option value="">Please Select Language *</option>
+            <option value="5" selected>pppp</option>
             <option :key="language.id" v-for="language in languages" :value="language.id">{{ language.name }}</option>                                     
         </select>     
     </div>

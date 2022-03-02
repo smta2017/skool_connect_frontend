@@ -3,6 +3,7 @@
         <label>Division *</label>
         <select name="division_id" class="" @change="updateValue($event)">
             <option value="">Please Select Division *</option>
+            <option value="5" selected>pppp</option>
             <option :key="division.id" v-for="division in divisions" :value="division.id">{{ division.name }}</option>                                       
         </select>      
   </div>

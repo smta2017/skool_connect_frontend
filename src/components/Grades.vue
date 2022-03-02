@@ -3,6 +3,7 @@
         <label>Grade *</label>
         <select name="grade_id" class="" @change="updateValue($event)">
             <option value="">Please Select Grade *</option>
+            <option value="5" selected>pppp</option>
             <option :key="grade.id" v-for="grade in grades" :value="grade.id">{{ grade.name }}</option>                                       
         </select>        
     </div>

@@ -73,10 +73,10 @@
                                         <td>{{student.custody}}</td>
                                         <td>{{student.first_name_en}} </td>
                                         <td>{{student.last_name_en}}</td>
-                                        <td>{{student.division_id}}</td>
-                                        <td>{{student.grade_id}}</td>
-                                        <td>{{student.class_id}}</td>
-                                        <td>{{student.religion_id}}</td>
+                                        <td>{{student.division}}</td>
+                                        <td>{{student.grade}}</td>
+                                        <td>{{student.class}}</td>
+                                        <td>{{student.religion}}</td>
 										<!--<td>{{student.custody}}</td> -->
 										<!--<td>{{student.custody}}</td> -->
 										<td>{{student.created_at}}</td>

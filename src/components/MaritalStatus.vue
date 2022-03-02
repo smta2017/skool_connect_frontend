@@ -3,6 +3,7 @@
         <label>MaritalStatus *</label>
         <select name="marital_status_id" class="" @change="updateValue($event)">
             <option value="">Please Select Marital Status *</option>
+            <option value="5" selected>pppp</option>
             <option :key="mstatus.id" v-for="mstatus in maritalStatus" :value="mstatus.id">{{ mstatus.name }}</option>                                       
         </select>
     </div>

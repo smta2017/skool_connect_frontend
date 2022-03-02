@@ -36,6 +36,9 @@ export default {
       })
       .then(response => (this.schoolBuildings = response.data.data))
       .catch(error => console.log(error))
+  },
+  mounted() {
+   // this.schoolBuildings.id = this.defultBuilding;
   }
 }
 </script>

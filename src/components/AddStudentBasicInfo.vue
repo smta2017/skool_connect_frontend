@@ -144,25 +144,23 @@
                 </div> 
                 
                 <div class="">
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-xl-12 col-lg-12 col-12 form-group">
 						<label class="">Foreigner ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="foreigner" v-model="form.foreigner" id="foreignerinlineRadio1" value="1">
-                           <label class="form-check-label " for="foreignerinlineRadio1">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline Custom_Radio">
-                            <input class="form-check-input" type="radio" name="foreigner" v-model="form.foreigner" id="foreignerinlineRadio2" value="0">
-                            <label class="form-check-label" for="foreignerinlineRadio2">No</label>
+                        <div class="">
+                           <input class="" type="radio" name="foreigner" v-model="form.foreigner" id="foreignerinlineRadio1" value="1" checked="checked">
+                           <label class=" " for="foreignerinlineRadio1">Yes</label>
+
+                            <input class="" type="radio" name="foreigner" v-model="form.foreigner" id="foreignerinlineRadio2" value="0">
+                            <label class="" for="foreignerinlineRadio2">No</label>
                         </div>
                     </div>
 
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Egypt Returning ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="egy_returning" v-model="form.egy_returning" id="inlineRadio1" value="1">
+                        <div class="">
+                           <input class="form-check-input" type="radio" name="egy_returning" v-model="form.egy_returning" id="inlineRadio1" value="1" checked="checked">
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+
                             <input class="form-check-input" type="radio" name="egy_returning" v-model="form.egy_returning" id="inlineRadio2" value="0">
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -170,11 +168,11 @@
 
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Transfer From Cairo ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="transfer_from_cairo" v-model="form.transfer_from_cairo" id="inlineRadio1" value="1">
+                        <div class="">
+                           <input class="form-check-input" type="radio" name="transfer_from_cairo" v-model="form.transfer_from_cairo" id="inlineRadio1" value="1" checked="checked">
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="">
                             <input class="form-check-input" type="radio" name="transfer_from_cairo" v-model="form.transfer_from_cairo" id="inlineRadio2" value="0">
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -183,11 +181,11 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Staff Child ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="staff_child" v-model="form.staff_child" id="inlineRadio1" value="1">
+                        <div class="">
+                           <input class="form-check-input" type="radio" name="staff_child" v-model="form.staff_child" id="inlineRadio1" value="1" checked="checked">
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="">
                             <input class="form-check-input" type="radio" name="staff_child" v-model="form.staff_child" id="inlineRadio2" value="0">
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -201,11 +199,11 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-12 col-12 form-group">
 						<label class="">Learn Support ?</label>
-                        <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="learn_support" v-model="form.learn_support" id="inlineRadio1" value="1">
+                        <div class="">
+                           <input class="form-check-input" type="radio" name="learn_support" v-model="form.learn_support" id="inlineRadio1" value="1" checked="checked">
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline Custom_Radio">
+                        <div class="">
                             <input class="form-check-input" type="radio" name="learn_support" v-model="form.learn_support" id="inlineRadio2" value="0">
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
@@ -263,51 +261,54 @@ export default {
     data: function () {
         return{
             form: {
-                "first_name_en": "",
-                "middle_name_en": "",
-                "last_name_en": "",
-                "first_name_ar": "",
-                "middle_name_ar": "",
-                "last_name_ar": "",
-                "division_id": "",
-                "grade_id": "",
-                "class_id": "",
-                "national_no": "",
-                "passport_no": "",
-                "birth_date": "000-00-00",
-                "birth_place": "",
-                "october_age_date": "000-00-00",
-                "academic_year_applying_id": "",
-                "nationality_id": "",
-                "gender_id": "",
-                "bus_id": "",
-                "religion_id": "",
-                "previous_school_nursery": "",
-                "address": "",
-                "city": "",
-                "email": "",
-                "mobile": "",
-                "submit_date": "000-00-00",
-                "photo": "",
-                "code": "",
-                "lang_id": "",
-                "user_id": "150",
-                "birth_certificate": "",
-                "academic_house": "",
-                "report_cards": "",
-                "referance_letter": "",
-                "referance_name": "",
-                "referance_email": "",
-                "referance_phone": "",
-                "enroll_date": "000-00-00",
-                "custody": "",
-                "foreigner": true,
-                "egy_returning": false,
-                "transfer_from_cairo": false,
-                "staff_child": false,
-                "staff_no": "",
-                "learn_support": false,
-                "learn_support_details": ""
+                "id": 1,
+                "user_id" : 50,
+      "first_name_en": "maxime",
+      "middle_name_en": "sint",
+      "last_name_en": "consequuntur",
+      "first_name_ar": "iure",
+      "middle_name_ar": "deleniti",
+      "last_name_ar": "similique",
+      "division": 1,
+      "grade": 1,
+      "class": 2,
+      "national_no": 1,
+      "passport_no": "facilis",
+      "birth_date": "2007-02-03",
+      "birth_place": "consequatur",
+      "october_age_date": "2017-09-28",
+      "academic_year_applying": 1,
+      "nationality": 1,
+      "gender": "1",
+      "bus": 5,
+      "religion": 5,
+      "previous_school_nursery": "laudantium",
+      "address": "deleniti",
+      "city": "accusantium",
+      "email": "similique@ghjk.com",
+      "mobile": "fuga",
+      "submit_date": "1972-08-12",
+      "photo": "architecto",
+      "code": "est",
+      "language": 5,
+      "birth_certificate": "ut",
+      "academic_house": "saepe",
+      "report_cards": "minima",
+      "referance_letter": "nostrum",
+      "referance_name": "eum",
+      "referance_email": "ut",
+      "referance_phone": "saepe",
+      "enroll_date": "1975-02-12",
+      "custody": "ut",
+      "foreigner": true,
+      "egy_returning": true,
+      "transfer_from_cairo": false,
+      "staff_child": true,
+      "staff_no": "eos",
+      "learn_support": false,
+      "learn_support_details": "magnam",
+      "created_at": "1992-12-28",
+      "updated_at": "2010-05-12"
             }
         }
     } ,
@@ -315,6 +316,7 @@ export default {
         //console.log(this.formType)
         //console.log(this.$route.params.stdid)
         
+
         this.formType === 'edit'? this.GetStudentData() : ''
   },
     methods: {

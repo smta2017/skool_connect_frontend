@@ -40,15 +40,15 @@
                             </tr>
                             <tr>
                                 <td>Division:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.division_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.division}}</td>
                             </tr>
                             <tr>
                                 <td>Grade:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.grade_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.grade}}</td>
                             </tr>
                             <tr>
                                 <td>Class:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.class_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.class}}</td>
                             </tr>
                             <tr>
                                 <td>National No:</td>
@@ -76,28 +76,28 @@
                             </tr>
                             <tr>
                                 <td>Academic Year:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.academic_year_applying_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.academic_year_applying}}</td>
                             </tr>
                             <tr>
                                 <td>Nationality:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.nationality_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.nationality}}</td>
                             </tr>
                             <tr>
                                 <td>Nationality:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.nationality_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.nationality}}</td>
                             </tr>
 
                             <tr>
                                 <td>Gender:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.gender_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.gender}}</td>
                             </tr>
                             <tr>
                                 <td>Bus:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.bus_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.bus}}</td>
                             </tr>
                             <tr>
                                 <td>Religion:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.religion_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.religion}}</td>
                             </tr>
                             <tr>
                                 <td>Previous School Nursery:</td>
@@ -129,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td>Language:</td>
-                                <td class="font-medium text-dark-medium">{{this.userData.lang_id}}</td>
+                                <td class="font-medium text-dark-medium">{{this.userData.lang}}</td>
                             </tr>
                             <tr>
                                 <td>Custody:</td>

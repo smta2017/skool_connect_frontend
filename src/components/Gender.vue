@@ -3,6 +3,7 @@
         <label>Gender *</label>
         <select class="" name="gender_id" @change="updateValue($event)">
             <option value="">Please Select Gender *</option>
+            <option value="5" selected>pppp</option>
             <option :key="gender.id" v-for="gender in genders" :value="gender.id">{{ gender.name }}</option>                                       
         </select>        
     </div>

@@ -3,6 +3,7 @@
     <label>Year *</label>
     <select name="academic_year_applying_id" class="" @change="updateValue($event)">
       <option value="">Please Select School *</option>
+      <option value="5" selected>pppp</option>
       <option :key="academic_year.id" v-for="academic_year in academic_years" :value="academic_year.id">{{ academic_year.name }}</option>                                       
     </select>    
   </div>

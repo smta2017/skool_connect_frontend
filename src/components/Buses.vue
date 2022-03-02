@@ -3,6 +3,7 @@
         <label>Bus *</label>
         <select name="bus_id" class="" @change="updateValue($event)">
             <option value="">Please Select Bus *</option>
+            <option value="5" selected>pppp</option>
             <option :key="bus.id" v-for="bus in buses" :value="bus.id">{{ bus.bus_no }}</option>                                       
         </select>
     </div>
