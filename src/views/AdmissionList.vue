@@ -52,7 +52,7 @@
                                     <tr>
                                         <td>{{student.id}} </td>
                                         <td>{{student.student.first_name_en}} {{student.student.last_name_en}} </td>
-                                        <td>{{student.parent1.last_name_en}} {{student.parent1.first_name_en}} <br> {{student.parent2.last_name_en}} {{student.parent2.first_name_en}}</td>
+                                        <td>{{student.parent1.first_name_en}} {{student.parent1.last_name_en}} <br> {{student.parent2.first_name_en}} {{student.parent2.last_name_en}}</td>
                                         <td>{{student.evaluation_card.principal_recommendation}}</td>
                                         <td>{{student.evaluation_card.principal_ability}}</td>
                                         <td>{{student.admission_status.name}}</td>
