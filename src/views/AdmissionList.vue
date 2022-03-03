@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="heading-layout1">
                     <div class="item-title">
-                        <h3>All Students Data</h3>
+                        <h3>Admission Data</h3>
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -51,7 +51,7 @@
                                 <tbody :key="student.id" v-for="student in applicatioInfo">
                                     <tr>
                                         <td>{{student.id}} </td>
-                                        <td>{{student.student.first_name_en}} {{student.student.first_name_en}} </td>
+                                        <td>{{student.student.first_name_en}} {{student.student.last_name_en}} </td>
                                         <td>{{student.parent1.last_name_en}} {{student.parent1.first_name_en}} <br> {{student.parent2.last_name_en}} {{student.parent2.first_name_en}}</td>
                                         <td>{{student.evaluation_card.principal_recommendation}}</td>
                                         <td>{{student.evaluation_card.principal_ability}}</td>
