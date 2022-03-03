@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Admission</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <router-link to="/admission_list" class="nav-link">
