@@ -1,5 +1,5 @@
 <template>
-<div class="modal sign-up-modal fade" :id="'sign-up' + this.admissionData.id" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal sign-up-modal fade" :id="'sign-up' + this.admissionData.evaluation_card.id" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered evaluation-card" role="document">
         <div class="modal-content">
             <form class="new-added-form" v-on:submit="updateEvaluationCard">
@@ -300,12 +300,14 @@ export default {
     async created () {
         console.log(this.admissionData.admission_status.name)
         //this.admissionData.id === 1 ? this.getEvalutaionCarsData() : ''
+        this.getEvalutaionCarsData()
         this.getSchoolBuilding()
   },
     methods : {
         getEvalutaionCarsData() {
+            console.log('evaulation card is : '+this.admissionData.evaluation_card.id)
             axios
-            .get('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.id,{
+            .get('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.evaluation_card.id,{
                 headers: {
                 'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
                 'Accept' : 'application/json',
@@ -330,7 +332,7 @@ export default {
             e.preventDefault()
             console.log(this.evaluationCardInfo)
                         e.preventDefault()     
-            axios.put('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.id,
+            axios.put('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.evaluation_card.id,
             this.evaluationCardInfo,
             {
             headers: {
