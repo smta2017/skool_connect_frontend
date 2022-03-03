@@ -40,6 +40,7 @@
                             <table class="table display data-table text-nowrap all_student">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Student Name</th>
                                         <th>Parents</th>
                                         <th>Principal Recommendation</th>
@@ -49,7 +50,7 @@
                                     </thead>
                                 <tbody :key="student.id" v-for="student in applicatioInfo">
                                     <tr>
-
+                                        <td>{{student.id}} </td>
                                         <td>{{student.student.first_name_en}} {{student.student.first_name_en}} </td>
                                         <td>{{student.parent1.last_name_en}} {{student.parent1.first_name_en}} <br> {{student.parent2.last_name_en}} {{student.parent2.first_name_en}}</td>
                                         <td>{{student.evaluation_card.principal_recommendation}}</td>

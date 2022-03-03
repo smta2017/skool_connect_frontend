@@ -49,21 +49,21 @@
                 <Nationality @nationality_change="nationalityChange"/>
 
                 <Religions @religion_change="religionChange"/> --> 
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Gender *</label>
                     <select class="" name="gender_id" v-model="form.student.gender_id">
                         <option value="">Please Select Gender *</option>
                         <option :key="gender.id" v-for="gender in genders" :value="gender.id">{{ gender.name }}</option>                                       
                     </select>        
                 </div> 
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Nationality *</label>
                     <select class="" name="nationality_id" v-model="form.student.nationality_id">
                             <option value="">Please Select Nationality *</option>
                             <option :key="nationality.id" v-for="nationality in nationalities" :value="nationality.id">{{ nationality.name }}</option>                                       
                         </select>
                 </div>                
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Religion *</label>
                     <select name="religion_id" class="" v-model="form.student.religion_id">
                     <option value="">Please Select Religion *</option>
@@ -71,7 +71,7 @@
                     </select>    
                 </div>
                          
-				<div class="col-xl-3 col-lg-6 col-12 form-group">
+				<div class="col-3 col-lg-6 col-12 form-group">
                     <label>Date Of Birth *</label>
                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
                                         data-position='bottom right' name="birth_date" v-model="form.student.birth_date" required>
@@ -81,13 +81,13 @@
                     <label>October Age Date *</label>
                     <input type="text" placeholder="" class="form-control" name="october_age_date" v-model="form.student.october_age_date" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Submit Date *</label>
                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
                                         data-position='bottom right' name="submit_date" v-model="form.student.submit_date" required>
                     <i class="far fa-calendar-alt"></i>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Enroll Date *</label>
                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
                                         data-position='bottom right' name="enroll_date" v-model="form.student.enroll_date" required>
@@ -105,19 +105,19 @@
                     <label>City *</label>
                     <input type="text" placeholder="" class="form-control" name="city" v-model="form.student.city" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Communication E-Mail</label>
                     <input type="email" placeholder="" class="form-control" name="email" v-model="form.student.email" required>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-12 form-group">
+				<div class="col-3 col-lg-6 col-12 form-group">
                     <label>Communication Mobile</label>
                     <input type="tel" id="phone" name="mobile"  v-model="form.student.mobile" class="form-control" required>
                 </div>
-				<div class="col-xl-3 col-lg-6 col-12 form-group">
+				<div class="col-3 col-lg-6 col-12 form-group">
                     <label>Custodial Parent Name</label>
                     <input type="txt" placeholder="" class="form-control" name="custody" v-model="form.student.custody" required>
                 </div>
-				<div class="col-xl-3 col-lg-6 col-12 form-group">
+				<div class="col-3 col-lg-6 col-12 form-group">
                     <label>Passport No.</label>
                     <input type="txt" placeholder="" class="form-control" name="passport_no" v-model="form.student.passport_no" required>
                 </div>
@@ -125,40 +125,40 @@
 				<Divisions @division_change="divisionChange"/>
                 <Grades @grade_change="gradeChange"/>
 				<Classes @class_change="classChange"/>-->
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Year *</label>
                     <select name="academic_year_applying_id" class="" v-model="form.student.academic_year_applying_id">
                     <option value="">Please Select School *</option>
                     <option :key="academic_year.id" v-for="academic_year in academic_years" :value="academic_year.id">{{ academic_year.name }}</option>                                       
                     </select>    
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Division *</label>
                     <select name="division_id" class="" v-model="form.student.division_id">
                         <option value="">Please Select Division *</option>
                         <option :key="division.id" v-for="division in divisions" :value="division.id">{{ division.name }}</option>                                       
                     </select>      
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Grade *</label>
                     <select name="grade_id" class="" v-model="form.student.grade_id">
                         <option value="">Please Select Grade *</option>
                         <option :key="grade.id" v-for="grade in grades" :value="grade.id">{{ grade.name }}</option>                                       
                     </select>        
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Class *</label>
                     <select name="class_id" class="" v-model="form.student.class_id">
                         <option value="">Please Select Class *</option>
                         <option :key="one_class.id" v-for="one_class in classes" :value="one_class.id">{{ one_class.name }}</option>                                     
                     </select>     
                 </div>
-				<div class="col-xl-3 col-lg-6 col-12 form-group">
+				<div class="col-3 col-lg-6 col-12 form-group">
                     <label>Previous School/Nursery *</label>
                     <input type="text" placeholder="" name="previous_school_nursery" v-model="form.student.previous_school_nursery" class="form-control" required>
                 </div>
                 <!--<Buses @bus_change="busChange"/> -->
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Bus *</label>
                     <select name="bus_id" class="" v-model="form.student.bus_id">
                         <option value="">Please Select Bus *</option>
@@ -169,7 +169,7 @@
                     <label>Code</label>
                     <input type="txt" placeholder="" name="code" v-model="form.student.code" class="form-control" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Select Spoken *</label>
                     <select name="lang_id" class="" v-model="form.student.lang_id">
                         <option value="">Please Select Language *</option>
@@ -226,7 +226,7 @@
                 </div> 
                 
                 <div class="">
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-l-3 col-lg-12 col-12 form-group">
 						<label class="">Foreigner ?</label>
                         <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="foreigner" v-model="form.student.foreigner" id="foreignerinlineRadio1" value="1" required>
@@ -238,7 +238,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-3 col-lg-12 col-12 form-group">
 						<label class="">Egypt Returning ?</label>
                         <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="egy_returning" v-model="form.student.egy_returning" id="inlineRadio1" value="1" required>
@@ -250,7 +250,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-3 col-lg-12 col-12 form-group">
 						<label class="">Transfer From Cairo ?</label>
                         <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="transfer_from_cairo" v-model="form.student.transfer_from_cairo" id="inlineRadio1" value="1" required>
@@ -263,7 +263,7 @@
                     </div>                                        
                 </div>  
                 <div class="row">
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-3 col-lg-12 col-12 form-group">
 						<label class="">Staff Child ?</label>
                         <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="staff_child" v-model="form.student.staff_child" id="inlineRadio1" value="1" required>
@@ -281,7 +281,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-3 col-lg-12 col-12 form-group">
+                    <div class="col-3 col-lg-12 col-12 form-group">
 						<label class="">Learn Support ?</label>
                         <div class="form-check form-check-inline ">
                            <input class="" type="radio" name="learn_support" v-model="form.student.learn_support" id="inlineRadio1" value="1" required>
@@ -361,7 +361,7 @@
                     <label>Type OF Business *</label>
                     <input type="text" placeholder="" class="form-control" v-model="form.parent1.type_of_business" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Business Address</label>
                     <input type="text" placeholder="" class="form-control" v-model="form.parent1.business_address" required>
 				</div>
@@ -384,11 +384,11 @@
                     <label>Type *</label>
                     <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent1.type">
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>School</label>
                     <input type="text" placeholder="" class="form-control" name="school" v-model="form.parent1.school">
 				</div>
-                <div class="col-xl-3 col-lg-12 col-12 form-group">
+                <div class="col-3 col-lg-12 col-12 form-group">
 					<label class="">alumni ?</label>
                     <div class="form-check form-check-inline ">
                         <input class="" type="radio" name="alumni1" v-model="form.parent1.alumni"  value="1">
@@ -457,7 +457,7 @@
                     <label>Type OF Business *</label>
                     <input type="text" placeholder="" class="form-control" v-model="form.parent2.type_of_business" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>Business Address</label>
                     <input type="text" placeholder="" class="form-control" v-model="form.parent2.business_address" required>
 				</div>
@@ -480,11 +480,11 @@
                     <label>Type *</label>
                     <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent2.type" required>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                <div class="col-3 col-lg-6 col-12 form-group">
                     <label>School</label>
                     <input type="text" placeholder="" class="form-control" name="school" v-model="form.parent2.school" required>
 				</div>
-                <div class="col-xl-3 col-lg-12 col-12 form-group">
+                <div class="col-3 col-lg-12 col-12 form-group">
 					<label class="">alumni ?</label>
                     <div class="form-check form-check-inline ">
                         <input class="" type="radio" v-model="form.parent2.alumni"  id="inlineRadio1-2" value="1" required>
