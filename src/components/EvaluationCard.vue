@@ -210,10 +210,10 @@
                                                 <select class="" v-model="evaluationCardInfo.principal_recommendation">
                                                     <option value="">Select</option>
                                                     <option value="Yes">Yes </option>
-                                                    <option value="Yes With Condition">Yes With Condition</option>
-                                                    <option value="Re-assess">Re-assess</option>
+                                                    <option value="Yes_With_Condition">Yes With Condition</option>
+                                                    <option value="Re_assess">Re-assess</option>
                                                     <option value="No">No</option>
-                                                    <option value="More Info Needed">More Info Needed</option>                                                       
+                                                    <option value="More_Info_Needed">More Info Needed</option>
                                                 </select>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-12 form-group">
