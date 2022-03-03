@@ -46,9 +46,7 @@
                                         <th>Principal Ability</th>
                                         <th>Status</th>
                                     </tr>
-                         <td>{{student.evaluation_card.principal_recommendation}}</td>
-                                        <td>{{student.evaluation_card.principal_ability}}</td>
-                                               </thead>
+                                    </thead>
                                 <tbody :key="student.id" v-for="student in applicatioInfo">
                                     <tr>
 
