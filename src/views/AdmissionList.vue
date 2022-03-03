@@ -42,6 +42,8 @@
                                     <tr>
                                         <th>Student Name</th>
                                         <th>Parents</th>
+                                        <th>Principal Recommendation</th>
+                                        <th>Principal Ability</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -50,7 +52,9 @@
 
                                         <td>{{student.student.first_name_en}} {{student.student.first_name_en}} </td>
                                         <td>{{student.parent1.last_name_en}} {{student.parent1.first_name_en}} <br> {{student.parent2.last_name_en}} {{student.parent2.first_name_en}}</td>
-                                        <td>{{student.admission_status_id}}</td>
+                                        <td>{{student.evaluation_card.principal_recommendation}}</td>
+                                        <td>{{student.evaluation_card.principal_ability}}</td>
+                                        <td>{{student.admission_status.name}}</td>
 								
 										
                                         <td>
