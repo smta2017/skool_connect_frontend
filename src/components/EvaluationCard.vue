@@ -239,7 +239,7 @@
                                                     <label>Application status :<span class="text-red">*</span></label>
                                                     <select class="" v-model="evaluationCardInfo.application_status">
                                                         <option value="">Select</option>
-                                                        <option value="Waiting List">Waiting List</option>
+                                                        <option value="Waiting_List">Waiting List</option>
                                                         <option value="Accepted">Accepted</option>
                                                         <option value="Rejected">Rejected</option>   
                                                     </select>
