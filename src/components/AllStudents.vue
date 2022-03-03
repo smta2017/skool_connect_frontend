@@ -46,10 +46,7 @@
                             <table class="table display data-table text-nowrap all_student">
                                 <thead>
                                     <tr>
-                                   
-                                        <!--<th>Applecation ID</th> -->
-                                        <!--<th>School ID</th>-->
-                                        <!--<th>Medical</th>-->
+                                        <th>ID</th>
                                         <th>Custody</th>
                                         <th>Student Name</th>
                                         <th>Family</th>
@@ -70,6 +67,7 @@
                                         </td> -->                                     
                                         <!--<td >{{student.code}}</td> -->
                                         <!-- <td class="student_medical"><i class="flaticon-doctor"></i></td>-->
+                                        <td>{{student.id}}</td>
                                         <td>{{student.custody}}</td>
                                         <td>{{student.first_name_en}} </td>
                                         <td>{{student.last_name_en}}</td>

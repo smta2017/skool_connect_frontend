@@ -40,6 +40,7 @@
                         <table class="table display data-table text-nowrap">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Name</th>
                                     <th>Marital Status</th>
                                     <th>university</th>
@@ -51,6 +52,7 @@
                             </thead>
                             <tbody :key="parent.id" v-for="parent in all_parents">
                                 <tr>
+                                    <td>{{parent.id}}</td>
                                     <td>{{parent.first_name_en}} {{parent.last_name_en}}</td>
                                     <td>{{parent.marital_status_id}}</td>
                                     <td>{{parent.university}}</td>
