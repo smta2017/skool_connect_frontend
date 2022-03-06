@@ -18,6 +18,8 @@ import AddStudent from '../views/AddStudent.vue'
 import EditStudent from '../views/EditStudent.vue'
 import ShowStudent from '../views/ShowStudent.vue'
 
+import OnlineAdmission from '../views/OnlineAdmission.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -93,6 +95,11 @@ const routes = [
     path: '/show_student/:stdid', 
     name: 'ShowStudent', 
     component: ShowStudent
+  },
+  {
+    path: '/online_admission', 
+    name: 'OnlineAdmission', 
+    component: OnlineAdmission
   }     
 ]
 

@@ -3,7 +3,7 @@
         <!-- Preloader Start Here -->
         <div id="preloader"></div>
         <!-- Preloader End Here -->
-        <div id="wrapper" class="wrapper bg-ash">
+        <div id="wrapper" class="wrapper bg-ash" v-if="!['OnlineAdmission','login', 'register', 'help'].includes($route.name)">
 
         <!-- Header Menu Area Start Here -->
             <HeaderMenu />
@@ -12,6 +12,10 @@
             <!-- Page Area Start Here -->
             <PageArea />
             <!-- Page Area End Here -->
+        </div>
+
+        <div  v-if="['OnlineAdmission','login', 'register', 'help'].includes($route.name)">
+          <router-view/>
         </div>
     </div>
 </template>
