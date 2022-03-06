@@ -39,10 +39,7 @@
                         <h2>Student Information</h2>
                         <p class="desc">Please enter your infomation and proceed to next step so we can build your account</p>
                         <div class="fieldset-content">
-                            
-                            
-                            
-                                                 <form class="new-added-form">
+                            <form class="new-added-form">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Application ID</label>
@@ -56,51 +53,50 @@
 								<div class="row">
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>First Name <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <input type="text" placeholder="" class="form-control" name="first_name_en" v-model="form.student.first_name_en" required>
                                 </div>
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Second Name <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <input type="text" placeholder="" name="middle_name_en" v-model="form.student.middle_name_en" class="form-control" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Family Name <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <input type="text" placeholder=""  name="last_name_en" v-model="form.student.last_name_en" class="form-control" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Gender <span class="text-red">*</span></label>
-                                    <select class="select2">
+                                    <select class="" name="gender_id" v-model="form.student.gender_id">
                                         <option value="">Please Select Gender *</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        
+                                        <option :key="gender.id" v-for="gender in genders" :value="gender.id">{{ gender.name }}</option>                                       
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Nationality <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <select class="" name="nationality_id" v-model="form.student.nationality_id">
+                                        <option value="">Please Select Nationality *</option>
+                                        <option :key="nationality.id" v-for="nationality in nationalities" :value="nationality.id">{{ nationality.name }}</option>                                       
+                                    </select>
                                 </div>
                            <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Religion <span class="text-red">*</span></label>
-                                    <select class="select2">
+                                    <select name="religion_id" class="" v-model="form.student.religion_id">
                                         <option value="">Please Select Religion *</option>
-                                        <option value="1">Islam</option>
-                                        <option value="3">Christian</option>                                      
-                                        <option value="3">Others</option>
+                                        <option :key="religion.id" v-for="religion in religions" :value="religion.id">{{ religion.name }}</option>                                       
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Date Of Birth <span class="text-red">*</span></label>
                                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                        data-position='bottom right'>
+                                        data-position='bottom right' name="birth_date" v-model="form.student.birth_date" required>
                                     <i class="far fa-calendar-alt"></i>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Place of Birth <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <input type="text" placeholder="" class="form-control" name="birth_place" v-model="form.student.birth_place" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Residential Address <span class="text-red">*</span></label>
-                                    <input type="text" placeholder="" class="form-control">
+                                    <input type="text" placeholder="" class="form-control" name="address" v-model="form.student.address" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Mailing Address <span class="text-red">*</span></label>
@@ -108,57 +104,50 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Communication E-Mail</label>
-                                    <input type="email" placeholder="" class="form-control">
+                                    <input type="email" placeholder="" class="form-control" name="email" v-model="form.student.email" required>
 									
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Communication Mobile</label>
-                                   <input type="tel" id="phone" name="phone"  class="form-control">
+                                   <input type="tel" id="phone" class="form-control" name="mobile"  v-model="form.student.mobile" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Custodial Parent Name</label>
-                                    <input type="txt" placeholder="" class="form-control">
+                                    <input type="txt" placeholder="" class="form-control" name="custody" v-model="form.student.custody" required>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>language Spoken At Home</label>
-                                    <input type="txt" placeholder="" class="form-control">
-                                </div>
-								
+                                    <label>language Spoken At Home <span class="text-red">*</span></label>
+                                    <select name="lang_id" class="" v-model="form.student.lang_id">
+                                        <option value="">Please Select Language *</option>
+                                        <option :key="language.id" v-for="language in languages" :value="language.id">{{ language.name }}</option>                                     
+                                    </select>
+                                </div>								
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Division <span class="text-red">*</span></label>
-                                    <select class="select2">
-                                        <option value="">Please Select School *</option>
-                                        <option value="1">British </option>
-                                        <option value="2">National</option>                                       
+                                    <select name="division_id" class="" v-model="form.student.division_id">
+                                        <option value="">Please Select Division *</option>
+                                        <option :key="division.id" v-for="division in divisions" :value="division.id">{{ division.name }}</option>                                       
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Grade <span class="text-red">*</span></label>
-                                    <select class="select2">
-                                        <option value="">Please Select School *</option>
-                                        <option value="1">British </option>
-                                        <option value="2">National</option>                                       
+                                    <select name="grade_id" class="" v-model="form.student.grade_id">
+                                        <option value="">Please Select Grade *</option>
+                                        <option :key="grade.id" v-for="grade in grades" :value="grade.id">{{ grade.name }}</option>                                       
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Year <span class="text-red">*</span></label>
-                                    <select class="select2">
+                                    <select name="academic_year_applying_id" class="" v-model="form.student.academic_year_applying_id">
                                         <option value="">Please Select School *</option>
-                                        <option value="1">British </option>
-                                        <option value="2">National</option>                                       
+                                        <option :key="academic_year.id" v-for="academic_year in academic_years" :value="academic_year.id">{{ academic_year.name }}</option>                                       
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Class <span class="text-red">*</span></label>
-                                    <select class="select2">
+                                    <select name="class_id" class="" v-model="form.student.class_id">
                                         <option value="">Please Select Class *</option>
-                                        <option value="1">Play</option>
-                                        <option value="2">Nursery</option>
-                                        <option value="3">One</option>
-                                        <option value="3">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="3">Four</option>
-                                        <option value="3">Five</option>
+                                        <option :key="one_class.id" v-for="one_class in classes" :value="one_class.id">{{ one_class.name }}</option>                                     
                                     </select>
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
@@ -169,11 +158,9 @@
                                 </div>
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Bus <span class="text-red">*</span></label>
-                                    <select class="select2">
-                                        <option value="">Please Select Class *</option>
-                                        <option value="1">Bus</option>
-                                        <option value="2">Pick-up</option>
-                                       
+                                    <select name="bus_id" class="" v-model="form.student.bus_id">
+                                        <option value="">Please Select Bus *</option>
+                                        <option :key="bus.id" v-for="bus in buses" :value="bus.id">{{ bus.bus_no }}</option>                                       
                                     </select>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-12 form-group">
@@ -183,11 +170,11 @@
                                 <div class="col-xl-4 col-lg-12 col-12 form-group">
 								<legend class="col-form-label col-lg-12  pt-0 pl-0">Foreigner ?</legend>
                                <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                           <input class="form-check-input" type="radio" name="foreigner" v-model="form.student.foreigner" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                             </div>
                        <div class="form-check form-check-inline Custom_Radio">
-                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                       <input class="form-check-input" type="radio" name="foreigner" v-model="form.student.foreigner" id="inlineRadio2" value="0" required>
                        <label class="form-check-label" for="inlineRadio2">No</label>
                               </div>
                                 </div>
@@ -196,30 +183,30 @@
                                 <div class="col-xl-4 col-lg-12 col-12 form-group">
 								<legend class="col-form-label col-lg-12  pt-0 pl-0">Egyptian Return From Abroad</legend>
                                <div class="form-check form-check-inline Custom_Radio">
-                           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                           <input class="form-check-input" type="radio" name="inlineRadioOptions" v-model="form.student.egy_returning" id="inlineRadio1" value="1" required>
                            <label class="form-check-label " for="inlineRadio1">Yes</label>
                             </div>
-                       <div class="form-check form-check-inline Custom_Radio">
-                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                       <label class="form-check-label" for="inlineRadio2">No</label>
+                            <div class="form-check form-check-inline Custom_Radio">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" v-model="form.student.egy_returning" id="inlineRadio2" value="0" required>
+                            <label class="form-check-label" for="inlineRadio2">No</label>
                               </div>
                                 </div>
                                  <div class="row">
                                 <div class="col-lg-6 col-12 form-group mg-t-30">
                                     <label class="text-dark-medium">Upload Birth Certificate <span class="text-red">*</span></label>
-                                    <input type="file" class="form-control-file">
+                                    <input type="file" class="form-control-file"  v-on:change="uploadBDfile" ref="birth_certificate" required>
                                 </div>
                                 <div class="col-lg-6 col-12 form-group mg-t-30">
                                     <label class="text-dark-medium">Upload Student Photo <span class="text-red">*</span></label>
-                                    <input type="file" class="form-control-file">
+                                    <input type="file" class="form-control-file" v-on:change="uploadStdPhoto" ref="photo" required>
                                 </div>
 								<div class="col-lg-6 col-12 form-group mg-t-30">
                                     <label class="text-dark-medium">Upload Pervious Repoart Card</label>
-                                    <input type="file" class="form-control-file">
+                                    <input type="file" class="form-control-file" v-on:change="uploadReportCard" ref="report_cards" required>
                                 </div>
 								<div class="col-lg-6 col-12 form-group mg-t-30">
                                     <label class="text-dark-medium">Reference letter</label>
-                                    <input type="file" class="form-control-file">
+                                    <input type="file" class="form-control-file" v-on:change="uploadRefLetter" ref="referance_letter">
                                 </div>
 								
 								</div>
@@ -227,132 +214,299 @@
                         </form>
                         </div>
                     </fieldset>
-
-                    <h3>School information</h3>
-                    <fieldset>
-                        <h2>Connect Bank Account</h2>
-                        <p class="desc">Please enter your infomation and proceed to next step so we can build your account</p>
-                        <div class="fieldset-content">
-                            <div class="form-group">
-                                <label for="find_bank" class="form-label">Find Your Bank</label>
-                                <div class="form-find">
-                                    <input type="text" name="find_bank" id="find_bank" placeholder="Ex. Techcombank" />
-                                    <input type="submit" value="Search" class="submit">
-                                    <span class="form-icon"><i class="zmdi zmdi-search"></i></span>
-                                </div>
-                            </div>
-                            <div class="choose-bank">
-                                <p class="choose-bank-desc">Or choose from these popular bank</p>
-                                <div class="form-radio-flex">
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_1" value="bank_1" checked="checked" />
-                                        <label for="bank_1"><img src="images/bank-1.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_2" value="bank_2" />
-                                        <label for="bank_2"><img src="images/bank-2.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_3" value="bank_3" />
-                                        <label for="bank_3"><img src="images/bank-3.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_4" value="bank_4" />
-                                        <label for="bank_4"><img src="images/bank-4.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_5" value="bank_5" />
-                                        <label for="bank_5"><img src="images/bank-5.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_6" value="bank_6" />
-                                        <label for="bank_6"><img src="images/bank-6.jpg" alt=""></label>
-                                    </div>
-                                    
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_7" value="bank_7" />
-                                        <label for="bank_7"><img src="images/bank-7.jpg" alt=""></label>
-                                    </div>
-
-                                    <div class="form-radio-item">
-                                        <input type="radio" name="choose_bank" id="bank_8" value="bank_8" />
-                                        <label for="bank_8"><img src="images/bank-8.jpg" alt=""></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
                     <h3>Parents information</h3>
                     <fieldset>
-                        <h2>Set Financial Goals</h2>
-                        <p class="desc">Set up your money limit to reach the future plan</p>
+                        <h2>Father Information</h2>
                         <div class="fieldset-content">
-                            <div class="donate-us">
-                                <div class="price_slider ui-slider ui-slider-horizontal">
-                                    <div id="slider-margin"></div>
-                                    <p class="your-money">
-                                        Your money you can spend per month :
-                                        <span class="money" id="value-lower"></span>
-                                        <span class="money" id="value-upper"></span>
-                                    </p>
-                                </div>
-                            </div>
+
+			<div class="row">
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>First Name (English)*</label>
+                    <input type="text" placeholder="" name="first_name_en" v-model="form.parent1.first_name_en" class="form-control" required>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Second Name (English) *</label>
+                    <input type="text" placeholder="" name="middle_name_en" v-model="form.parent1.middle_name_en" class="form-control" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Family Name (English) *</label>
+                    <input type="text" placeholder="" name="last_name_en" v-model="form.parent1.last_name_en" class="form-control" required>
+                </div>
+
+
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>First Name (Arabic) *</label>
+                    <input type="text" placeholder="" name="first_name_ar" v-model="form.parent1.first_name_ar" class="form-control" required>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Second Name (Arabic)*</label>
+                    <input type="text" placeholder="" name="middle_name_ar" v-model="form.parent1.middle_name_ar" class="form-control" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Family Name (Arabic)*</label>
+                    <input type="text" placeholder="" name="last_name_ar" v-model="form.parent1.last_name_ar" class="form-control" required>
+                </div>
+                <MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>University*</label>
+                    <input type="text" placeholder=""  v-model="form.parent1.university" class="form-control" required>
+                </div>
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Occupation *</label>
+                    <input type="text" placeholder="" class="form-control"  v-model="form.parent1.occupation" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>employer *</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent1.employer" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Type OF Business *</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent1.type_of_business" required>
+                </div>
+                <div class="col-3 col-lg-6 col-12 form-group">
+                    <label>Business Address</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent1.business_address" required>
+				</div>
+				
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Business Mobile*</label>
+                    <input type="text" placeholder="" name="business_mobile" v-model="form.parent1.business_mobile" class="form-control" required>
+                </div>
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Business Email *</label>
+                    <input type="email" placeholder="" class="form-control" name="business_email" v-model="form.parent1.business_email">
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Class Off *</label>
+                    <input type="text" placeholder="" class="form-control" name="class_off" v-model="form.parent1.class_off">
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Type *</label>
+                    <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent1.type">
+                </div>
+                <div class="col-3 col-lg-6 col-12 form-group">
+                    <label>School</label>
+                    <input type="text" placeholder="" class="form-control" name="school" v-model="form.parent1.school">
+				</div>
+                <div class="col-3 col-lg-12 col-12 form-group">
+					<label class="">alumni ?</label>
+                    <div class="form-check form-check-inline ">
+                        <input class="" type="radio" name="alumni1" v-model="form.parent1.alumni"  value="1">
+                        <label class="form-check-label " for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                        <input class="" type="radio" name="alumni1" v-model="form.parent1.alumni" value="0">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>                
+        </div> 
+
+                            
                         </div>
+                        <h2>Mother Infoemation</h2>
+                        <div class="fieldset-content">
+
+			<div class="row">
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>First Name (English)*</label>
+                    <input type="text" placeholder="" name="first_name_en" v-model="form.parent2.first_name_en" class="form-control" required>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Second Name (English) *</label>
+                    <input type="text" placeholder="" name="middle_name_en" v-model="form.parent2.middle_name_en" class="form-control" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Family Name (English) *</label>
+                    <input type="text" placeholder="" name="last_name_en" v-model="form.parent2.last_name_en" class="form-control" required>
+                </div>
+
+
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>First Name (Arabic) *</label>
+                    <input type="text" placeholder="" name="first_name_ar" v-model="form.parent2.first_name_ar" class="form-control" required>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Second Name (Arabic)*</label>
+                    <input type="text" placeholder="" name="middle_name_ar" v-model="form.parent2.middle_name_ar" class="form-control" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Family Name (Arabic)*</label>
+                    <input type="text" placeholder="" name="last_name_ar" v-model="form.parent2.last_name_ar" class="form-control" required>
+                </div>
+                <MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>University*</label>
+                    <input type="text" placeholder=""  v-model="form.parent2.university" class="form-control" required>
+                </div>
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Occupation *</label>
+                    <input type="text" placeholder="" class="form-control"  v-model="form.parent2.occupation" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>employer *</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent2.employer" required>
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Type OF Business *</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent2.type_of_business" required>
+                </div>
+                <div class="col-3 col-lg-6 col-12 form-group">
+                    <label>Business Address</label>
+                    <input type="text" placeholder="" class="form-control" v-model="form.parent2.business_address" required>
+				</div>
+				
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Business Mobile*</label>
+                    <input type="text" placeholder="" name="business_mobile" v-model="form.parent2.business_mobile" class="form-control" required>
+                </div>
+
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Business Email *</label>
+                    <input type="email" placeholder="" class="form-control" name="business_email" v-model="form.parent2.business_email">
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Class Off *</label>
+                    <input type="text" placeholder="" class="form-control" name="class_off" v-model="form.parent2.class_off">
+                </div>
+				<div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>Type *</label>
+                    <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent2.type">
+                </div>
+                <div class="col-3 col-lg-6 col-12 form-group">
+                    <label>School</label>
+                    <input type="text" placeholder="" class="form-control" name="school" v-model="form.parent2.school">
+				</div>
+                <div class="col-3 col-lg-12 col-12 form-group">
+					<label class="">alumni ?</label>
+                    <div class="form-check form-check-inline ">
+                        <input class="" type="radio" name="alumni1" v-model="form.parent2.alumni"  value="1">
+                        <label class="form-check-label " for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                        <input class="" type="radio" name="alumni1" v-model="form.parent2.alumni" value="0">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>                
+        </div> 
+
+                            
+                        </div>                    
+                    
                     </fieldset>
 					<h3>Brothers & sisters data</h3>
                     <fieldset>
-                        <h2>Set Financial Goals</h2>
-                        <p class="desc">Set up your money limit to reach the future plan</p>
+                        <h2>Sibling</h2>
                         <div class="fieldset-content">
-                            <div class="donate-us">
-                                <div class="price_slider ui-slider ui-slider-horizontal">
-                                    <div id="slider-margin"></div>
-                                    <p class="your-money">
-                                        Your money you can spend per month :
-                                        <span class="money" id="value-lower"></span>
-                                        <span class="money" id="value-upper"></span>
-                                    </p>
+      
+                                <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Name <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
                                 </div>
+                               
+                            
+                                
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Division <span class="text-red">*</span></label>
+                                    <select class="select2">
+                                        <option value="">Please Select School *</option>
+                                        <option value="1">British </option>
+                                        <option value="2">National</option>                                       
+                                    </select>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Grade <span class="text-red">*</span></label>
+                                    <select class="select2">
+                                        <option value="">Please Select Grade *</option>
+                                        <option value="1">British </option>
+                                        <option value="2">National</option>                                       
+                                    </select>
+                                </div>
+                                
+                                
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Sibling From <span class="text-red">*</span></label>
+                                    <select class="select2">
+                                        <option value="">Please Select  *</option>
+                                        <option value="1">Father</option>
+                                        <option value="2">Mother</option>
+                                          <option value="2">Parent</option>
+                                    </select>
+                                </div>
+                                
+                            <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Sibling From <span class="text-red">*</span></label>
+                                    <select class="select2">
+                                        <option value="">Please Select  *</option>
+                                        <option value="1">Father</option>
+                                        <option value="2">Mother</option>
+                                          <option value="2">Parent</option>
+                                    </select>
+                                </div>
+                                   <div class="col-xl-4 col-lg-6 col-12 form-group mg-t-12 mg-t-30">
+                                   <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Add Sibling</button>
+                                   </div> 
+                                
                             </div>
                         </div>
                     </fieldset>
 					<h3>Other information</h3>
                     <fieldset>
-                        <h2>Set Financial Goals</h2>
-                        <p class="desc">Set up your money limit to reach the future plan</p>
+                        <h2>Emergency Contact</h2>
                         <div class="fieldset-content">
-                            <div class="donate-us">
-                                <div class="price_slider ui-slider ui-slider-horizontal">
-                                    <div id="slider-margin"></div>
-                                    <p class="your-money">
-                                        Your money you can spend per month :
-                                        <span class="money" id="value-lower"></span>
-                                        <span class="money" id="value-upper"></span>
-                                    </p>
+<div class="row">
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Name 1 <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
                                 </div>
-                            </div>
-                        </div>
-                    </fieldset>
-					<h3>Terms & conditions</h3>
-                    <fieldset>
-                        <h2>Set Financial Goals</h2>
-                        <p class="desc">Set up your money limit to reach the future plan</p>
-                        <div class="fieldset-content">
-                            <div class="donate-us">
-                                <div class="price_slider ui-slider ui-slider-horizontal">
-                                    <div id="slider-margin"></div>
-                                    <p class="your-money">
-                                        Your money you can spend per month :
-                                        <span class="money" id="value-lower"></span>
-                                        <span class="money" id="value-upper"></span>
-                                    </p>
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Relation <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
                                 </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label> Mobile<span class="text-red">*</span></label>
+                                    <input type="tel" id="phone" name="phone"  class="form-control">
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                    <label>Address <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label> E-Mail<span class="text-red">*</span></label>
+                                    <input type="email" placeholder="" class="form-control">
+                                </div>                          
+                                
+                                
+                                  <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Name 2 <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
+                                </div>
+                                
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Relation <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label> Mobile<span class="text-red">*</span></label>
+                                    <input type="tel" id="phone" name="phone"  class="form-control">
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                    <label>Address <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label> E-Mail<span class="text-red">*</span></label>
+                                    <input type="email" placeholder="" class="form-control">
+                                </div>
+                                
                             </div>
                         </div>
                     </fieldset>
@@ -378,6 +532,344 @@
     </div>
 </div>
 </template>
+
+
+<script>
+// @ is an alias to /src
+/*import Gender from '@/components/Gender.vue'
+import Nationality from '@/components/Nationality.vue'
+import Religions from '@/components/Religions.vue'
+import AcademicYears from '@/components/AcademicYears.vue'
+import Divisions from '@/components/Divisions.vue'
+import Grades from '@/components/Grades.vue'
+import Classes from '@/components/Classes.vue'
+import Buses from '@/components/Buses.vue'
+import Languages from '@/components/Languages.vue'*/
+//import FormSaveResetBtns from '@/components/FormSaveResetBtns.vue'
+import MaritalStatus from '@/components/MaritalStatus.vue'
+import axios from 'axios';
+export default {
+    name: 'Admission',
+    components : {
+        /*FormSaveResetBtns,Gender,Nationality,Religions,AcademicYears,Divisions,Grades,Classes,Buses,Languages,*/MaritalStatus
+    },
+    data: function () {
+        return {
+            genders : [],
+            nationalities: [],
+            religions : [],
+            academic_years: [],
+            languages: [],
+            buses: [],
+            classes: [],
+            grades: [],
+            divisions: [],            
+            parentType : ['father','mother'] ,
+            form: {
+      //"id": 1,
+      "student": {
+       // "id": 9,
+        "first_name_en": "Marwaaaaaa",
+        "middle_name_en": "temporibus",
+        "last_name_en": "aliquid",
+        "first_name_ar": "perferendis",
+        "middle_name_ar": "iste",
+        "last_name_ar": "est",
+        "division_id": 5,
+        "grade_id": 5,
+        "class_id": 6,
+        "national_no": "earum",
+        "passport_no": "repellat",
+        "birth_date": "1999-05-24",
+        "birth_place": "illum",
+        "october_age_date": "2009-05-10",
+        "academic_year_applying_id": 6,
+        "nationality_id": 5,
+        "gender_id": 8,
+        "bus_id": 8,
+        "religion_id": 8,
+        "previous_school_nursery": "omnis",
+        "address": "et",
+        "city": "rerum",
+        "email": "iusto@fgh.com",
+        "mobile": "et",
+        "submit_date": "2006-01-12",
+        "photo": "",
+        "code": "vero",
+        "lang_id": 8,
+        "birth_certificate": "",
+        "academic_house": "quaerat",
+        "report_cards": "",
+        "referance_letter": "",
+        "referance_name": "provident",
+        "referance_email": "alias@ggg.com",
+        "referance_phone": "ut",
+        "enroll_date": "2020-09-04",
+        "custody": "et",
+        "foreigner": 0,
+        "egy_returning": 1,
+        "transfer_from_cairo": 0,
+        "staff_child": 0,
+        "staff_no": "atque",
+        "learn_support": 0,
+        "learn_support_details": "et",
+        "user_id" :5,
+      },
+      "parent1": {
+        //"id": 18,
+        "first_name_en": "molestiae",
+        "middle_name_en": "dolore",
+        "last_name_en": "quod",
+        "first_name_ar": "quia",
+        "middle_name_ar": "sapiente",
+        "last_name_ar": "repellendus",
+        "marital_status_id": 8,
+        "university": "soluta",
+        "occupation": "ipsa",
+        "employer": "veniam",
+        "type_of_business": "et",
+        "business_address": "vitae",
+        "business_mobile": "et",
+        "business_email": "libero@gh.com",
+        "alumni": 1,
+        "class_off": "necessitatibus",
+        "type": "voluptas",
+        "school": "sit"
+      },
+      "parent2": {
+        //"id": 5,
+        "first_name_en": "voluptatem",
+        "middle_name_en": "voluptatibus",
+        "last_name_en": "ipsa",
+        "first_name_ar": "voluptas",
+        "middle_name_ar": "earum",
+        "last_name_ar": "vel",
+        "marital_status_id": 9,
+        "university": "assumenda",
+        "occupation": "nostrum",
+        "employer": "dolorem",
+        "type_of_business": "accusamus",
+        "business_address": "voluptas",
+        "business_mobile": "cupiditate",
+        "business_email": "libero@gh.com",
+        "alumni": 1,
+        "class_off": "aut",
+        "type": "aut",
+        "school": "exercitationem"
+      },
+      "student_id" : "0","parent1_id" : "0","parent2_id" : "0","admission_status_id" : "0"
+      /*,
+      "admission_status": {
+        "id": 12,
+        "name": "iure",
+        "created_at": "1972-04-03T17:38:45.000000Z",
+        "updated_at": "1982-07-12T22:43:19.000000Z"
+      }*/
+    }     
+        }
+    },
+    async mounted () {
+        //console.log(this.formType)
+        //console.log(this.$route.params.stdid)
+        this.getGenders()
+        this.getNationalities()
+        this.getReligions()
+        this.getLanguages()
+        this.getBuses()
+        this.getClasses()
+        this.getGrades()  
+        this.getDivisions() 
+        this.getAcademicYear()      
+       //this.formType === 'edit'? this.GetStudentData() : ''
+  },
+    methods: {
+        getGenders() {
+            axios.get('http://3.219.94.115/api/v1/genders',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.genders = response.data.data))
+        .catch(error => console.log(error))            
+        },
+        getNationalities() {
+            axios.get('http://3.219.94.115/api/v1/nationalities',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.nationalities = response.data.data))
+        .catch(error => console.log(error))            
+        },
+        getReligions() {
+            axios.get('http://3.219.94.115/api/v1/religions',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+            })
+            .then(response => (this.religions = response.data.data))
+            .catch(error => console.log(error))            
+        },
+        getLanguages() {
+            axios.get('http://3.219.94.115/api/v1/languages',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.languages = response.data.data))
+        .catch(error => console.log(error))
+        },
+        getBuses() {
+            axios.get('http://3.219.94.115/api/v1/buses',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.buses = response.data.data))
+        .catch(error => console.log(error))
+        },
+        getClasses() {
+            axios.get('http://3.219.94.115/api/v1/classes',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.classes = response.data.data))
+        .catch(error => console.log(error))
+        },
+        getGrades() {
+            axios.get('http://3.219.94.115/api/v1/grades',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.grades = response.data.data))
+        .catch(error => console.log(error))
+        },
+        getDivisions(){
+            axios.get('http://3.219.94.115/api/v1/divisions',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.divisions = response.data.data))
+        .catch(error => console.log(error))        
+        },
+        getAcademicYear(){
+                axios.get('http://3.219.94.115/api/v1/applyYears',{
+                headers: {
+                'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => (this.academic_years = response.data.data))
+            .catch(error => console.log(error))       
+        },
+        GetStudentData() {
+        axios.get('http://3.219.94.115/api/v1/students/'+this.StdId,{
+        headers: {
+          'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/x-www-form-urlencoded'
+        },
+      })
+      .then(response => (response.status === 200 ? this.form = response.data.data : alert('Error')))
+      .catch(error => console.log(error))
+        },
+      uploadStdPhoto(){
+        this.file = this.$refs.photo.files[0];
+      },
+      uploadBDfile(){
+        this.file = this.$refs.birth_certificate.files[0];
+      },
+      uploadReportCard(){
+        this.file = this.$refs.report_cards.files[0];
+      },
+      uploadRefLetter(){
+        this.file = this.$refs.referance_letter.files[0];
+      },                    
+    // submit the form to our backend api
+        async submitAdmissionForm(e) {
+            e.preventDefault()
+            this.form.append('photo', this.photo);
+            this.form.append('birth_certificate', this.birth_certificate);
+            this.form.append('report_cards', this.report_cards);
+            this.form.append('referance_letter', this.referance_letter);
+            console.log(this.form)
+            axios.post('http://3.219.94.115/api/v1/admissions',
+            this.form,
+            {
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'multipart/form-data'
+            //'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then((response)=> {
+            console.log(response)
+                response.status === 200 ? alert('Student Saved successfully') : alert('Error')
+            })
+        .catch(error => console.log(error))            
+    
+        },
+        genderChange(valueId) {
+            console.log(valueId)
+            this.form.student.gender_id = valueId
+            console.log(this.form.student.gender_id)
+        },
+        nationalityChange(valueId) {
+            this.form.student.nationality_id = valueId
+        },
+        religionChange(valueId) {
+            this.form.student.religion_id = valueId
+        },
+        academicYearChange(valueId) {
+            this.form.student.academic_year_applying_id = valueId
+        },
+        divisionChange(valueId) {
+            this.form.student.division_id = valueId
+        },
+        gradeChange(valueId) {
+            this.form.student.grade_id = valueId
+        },
+        classChange(valueId) {
+            this.form.student.class_id = valueId
+        },
+        busChange(valueId) {
+            this.form.student.bus_id = valueId
+        },
+        languageChange(valueId) {
+            this.form.student.lang_id = valueId
+        },
+        fatherMaritalStatusChange(valueId) {
+            this.form.parent1.marital_status_id = valueId
+        },
+        motherMaritalStatusChange(valueId) {
+            this.form.parent2.marital_status_id = valueId
+        }       
+    }
+}
+</script>
+
+
 <style scoped>
 /* @extend display-flex; */
 display-flex, .form-flex, .form-date-group, .steps ul, .title, .title .step-number, .actions ul li a, .form-radio-flex, .form-find {
