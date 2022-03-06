@@ -64,20 +64,20 @@
                         <div class="border-nav-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#tab7" role="tab" aria-selected="true">Exam dates</a>
+                                    <a class="nav-link active" data-toggle="tab" :href="'#tab7' + this.admissionData.evaluation_card.id" role="tab" aria-selected="true">Exam dates</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tab8" role="tab" aria-selected="false">Entrance Assessment</a>
+                                    <a class="nav-link" data-toggle="tab" :href="'#tab8' + this.admissionData.evaluation_card.id" role="tab" aria-selected="false">Entrance Assessment</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tab9" role="tab" aria-selected="false">Principal Reviews</a>
+                                    <a class="nav-link" data-toggle="tab" :href="'#tab9' + this.admissionData.evaluation_card.id" role="tab" aria-selected="false">Principal Reviews</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tab10" role="tab" aria-selected="false">Director Reviews</a>
+                                    <a class="nav-link" data-toggle="tab" :href="'#tab10' + this.admissionData.evaluation_card.id" role="tab" aria-selected="false">Director Reviews</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="tab7" role="tabpanel">
+                                <div class="tab-pane fade show active" :id="'tab7' + this.admissionData.evaluation_card.id" role="tabpanel">
                                     <div class="card height-auto">
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-6 col-12 form-group pt-5">
@@ -163,7 +163,7 @@
                                             </div>
                                         </div>
                                 </div>
-                                <div class="tab-pane fade" id="tab8" role="tabpanel">
+                                <div class="tab-pane fade" :id="'tab8' + this.admissionData.evaluation_card.id" role="tabpanel">
                                     <div class="card height-auto">
                                         <div class="heading-layout1">
                                             <div class="item-title">
@@ -194,7 +194,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="tab9" role="tabpanel">
+                                <div class="tab-pane fade" :id="'tab9' + this.admissionData.evaluation_card.id" role="tabpanel">
                                     <div class="card height-auto">
                                         <div class="heading-layout1">
 
@@ -229,7 +229,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="tab10" role="tabpanel">
+                                <div class="tab-pane fade" :id="'tab10' + this.admissionData.evaluation_card.id" role="tabpanel">
                                     <div class="card height-auto">
                                         <div class="row">
                                             <div class="col-lg-12 col-12 form-group">
