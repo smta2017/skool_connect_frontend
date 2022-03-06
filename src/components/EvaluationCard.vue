@@ -210,10 +210,10 @@
                                                 <select class="" v-model="evaluationCardInfo.principal_recommendation">
                                                     <option value="">Select</option>
                                                     <option value="Yes">Yes </option>
-                                                    <option value="Yes With Condition">Yes With Condition</option>
+                                                    <option value="Yes_With_Condition">Yes With Condition</option>
                                                     <option value="Re-assess">Re-assess</option>
                                                     <option value="No">No</option>
-                                                    <option value="More Info Needed">More Info Needed</option>                                                       
+                                                    <option value="More_Info_Needed">More Info Needed</option>                                                       
                                                 </select>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-12 form-group">
@@ -239,7 +239,7 @@
                                                     <label>Application status :<span class="text-red">*</span></label>
                                                     <select class="" v-model="evaluationCardInfo.application_status">
                                                         <option value="">Select</option>
-                                                        <option value="Waiting List">Waiting List</option>
+                                                        <option value="Waiting_List">Waiting List</option>
                                                         <option value="Accepted">Accepted</option>
                                                         <option value="Rejected">Rejected</option>   
                                                     </select>
@@ -272,6 +272,7 @@ export default {
         data: function () {
         return {
             reason : ['assessment1','assessment2','parentsMeeting'],
+            cardID : '',
             //defulat_building : [this.evaluationCardInfo.exam_building_id,this.evaluationCardInfo.exam_building2_id,this.evaluationCardInfo.meeting_building_id],
             evaluationCardInfo : {
                 "id": "",
@@ -298,14 +299,14 @@ export default {
         }
     },
     async created () {
-        console.log(this.admissionData.admission_status.name)
-        //this.admissionData.id === 1 ? this.getEvalutaionCarsData() : ''
-        this.getEvalutaionCarsData()
-        this.getSchoolBuilding()
+        this.$parent.$on('getChildEvaluationCard', this.correctEvaluationIdCheck);
   },
     methods : {
+        correctEvaluationIdCheck(sentValue) {
+            sentValue === this.admissionData.evaluation_card.id ? this.getEvalutaionCarsData() : ''
+        },
         getEvalutaionCarsData() {
-            console.log('evaulation card is : '+this.admissionData.evaluation_card.id)
+            this.getSchoolBuilding()
             axios
             .get('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.evaluation_card.id,{
                 headers: {
@@ -331,7 +332,7 @@ export default {
         async updateEvaluationCard(e) {
             e.preventDefault()
             console.log(this.evaluationCardInfo)
-                        e.preventDefault()     
+            e.preventDefault()     
             axios.put('http://3.219.94.115/api/v1/evaluationCards/'+this.admissionData.evaluation_card.id,
             this.evaluationCardInfo,
             {
@@ -342,21 +343,25 @@ export default {
             }
             })
             .then((response)=> {
-                    response.status === 200 ? alert('Evaluation Card Saved successfully') : alert('Error')
+                    response.status === 200 ? this.evaluationCardSuccessActions() : alert('Error')
                 })
             .catch(error => console.log(error))
         },
+        evaluationCardSuccessActions(){
+            this.$emit('updateAdmissionStatus', this.evaluationCardInfo);
+            alert('Evaluation Card Saved successfully')
+        },
         assessmentOneBuildingChange(valueId) {
             this.evaluationCardInfo.exam_building_id = valueId
-            console.log('assesment 1 '+this.evaluationCardInfo.exam_building_id)
+            //console.log('assesment 1 '+this.evaluationCardInfo.exam_building_id)
         },
         assessmentTwoBuildingChange(valueId) {
             this.evaluationCardInfo.exam_building2_id = valueId
-            console.log('assesment 2 '+this.evaluationCardInfo.exam_building2_id)
+            //console.log('assesment 2 '+this.evaluationCardInfo.exam_building2_id)
         },
         parentMeetingBuildingChange(valueId) {
             this.evaluationCardInfo.meeting_building_id = valueId
-            console.log('parents meeeting '+this.evaluationCardInfo.meeting_building_id)
+            //console.log('parents meeeting '+this.evaluationCardInfo.meeting_building_id)
         }
     }
 }

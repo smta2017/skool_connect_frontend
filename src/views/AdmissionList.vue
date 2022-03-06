@@ -64,7 +64,7 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item modal-trigger" href="" data-toggle="modal" :data-target="'#sign-up' + student.evaluation_card.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Evaluation Card</a>
+                                                    <a class="dropdown-item modal-trigger" @click="getChildEvaluationCardData(student.evaluation_card.id)" href="" data-toggle="modal" :data-target="'#sign-up' + student.evaluation_card.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Evaluation Card</a>
                                                     <router-link class="dropdown-item" :to="'/admission_details/' + student.id"><i class="fas fa-user-graduate text-dark-pastel-black"></i>Show</router-link>
                                                     <a class="dropdown-item" href="#" v-on:click="stdDelete(student.id)"><i class="fas fa-solid fa-users text-dark-pastel-black"></i>Delete</a>		
                                                 </div>
@@ -72,7 +72,7 @@
                                         </td>
                                     </tr>
                              <!--       <EvaluationCard :admissionData="student" v-if="student.id < 3"/> --->
-                                    <EvaluationCard :admissionData="student" />
+                                    <EvaluationCard :admissionData="student" @updateAdmissionStatus="updateAdmissionStatus"/>
                                 </tbody>
                             </table>
                         </div>
@@ -87,28 +87,39 @@
 // @ is an alias to /src
 import EvaluationCard from '@/components/EvaluationCard.vue'
 import axios from 'axios';
+
 export default {
     name: 'AdmissionList',
-    
     components : {
         EvaluationCard
     },
     data: function () {
         return {
-            applicatioInfo : { }
+            applicatioInfo : []
         }
     },
     async created () {
-    axios
-      .get('http://3.219.94.115/api/v1/admissions',{
-        headers: {
-          'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/x-www-form-urlencoded'
+        axios.get('http://3.219.94.115/api/v1/admissions',{
+            headers: {
+            'Authorization': 'Bearer 5|RTtsuhV8WRfE6DwPjnsd5JCy300j88SkRxT6KB3G' ,
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => (this.applicatioInfo = response.data.data))
+        .catch(error => console.log(error))
+    },
+    methods : {
+        getChildEvaluationCardData(cardId) {
+            this.$emit('getChildEvaluationCard',cardId);
+        },
+        updateAdmissionStatus(evaluationCardUpdatedDetails) {
+            this.applicatioInfo = this.applicatioInfo.map((singleRecord) => 
+                singleRecord.evaluation_card.id === evaluationCardUpdatedDetails.id ? 
+                { ...singleRecord,admission_status : {name : evaluationCardUpdatedDetails.application_status}  } 
+                : singleRecord
+            )
         }
-      })
-      .then(response => (this.applicatioInfo = response.data.data))
-      .catch(error => console.log(error))
-  }
+    }
 }
 </script>
