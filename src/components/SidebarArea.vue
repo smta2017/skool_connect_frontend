@@ -37,27 +37,19 @@
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Admission</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <router-link to="/admission_list" class="nav-link">
                                         <i class="fas fa-angle-right"></i>
-                                        Student Details
+                                        Admission List
                                     </router-link>
                                 </li>
-                                <!--<li class="nav-item">
-                                    <a href="student-details.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Details</a>
-                                </li>-->
                                 <li class="nav-item">
                                     <router-link to="/admission" class="nav-link">
                                         <i class="fas fa-angle-right"></i>
                                         Admission Form
                                     </router-link>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="student-promotion.html" class="nav-link"><i
-                                            class="fas fa-angle-right"></i>Student Promotion</a>
                                 </li>
                             </ul>
                         </li>

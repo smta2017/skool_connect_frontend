@@ -16,7 +16,7 @@ export default {
     /*data: function () {
         return {
             user_desc : 
-                {'user_name' : 'Students','user_count' : '13000','user_type' : 'student'}
+                {'user_name' : 'Students','user_count' : '20','user_type' : 'student'}
             
         }
     }*/
