@@ -870,7 +870,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 /* @extend display-flex; */
 display-flex, .form-flex, .form-date-group, .steps ul, .title, .title .step-number, .actions ul li a, .form-radio-flex, .form-find {
   display: flex;
