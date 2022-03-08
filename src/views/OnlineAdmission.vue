@@ -258,7 +258,7 @@
                     <label>Family Name (Arabic)*</label>
                     <input type="text" placeholder="" name="last_name_ar" v-model="form.parent1.last_name_ar" class="form-control" required>
                 </div>
-                <MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/>
+                <!--<MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/> -->
 				<div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label>University*</label>
                     <input type="text" placeholder=""  v-model="form.parent1.university" class="form-control" required>
@@ -344,7 +344,7 @@
                     <label>Family Name (Arabic)*</label>
                     <input type="text" placeholder="" name="last_name_ar" v-model="form.parent2.last_name_ar" class="form-control" required>
                 </div>
-                <MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/>
+                <!--<MaritalStatus :userType="parentType[0]" @fatherMaritalStatusChange="fatherMaritalStatusChange"/> -->
 				<div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label>University*</label>
                     <input type="text" placeholder=""  v-model="form.parent2.university" class="form-control" required>
@@ -538,22 +538,11 @@
 </template>
 <script>
 // @ is an alias to /src
-/*import Gender from '@/components/Gender.vue'
-import Nationality from '@/components/Nationality.vue'
-import Religions from '@/components/Religions.vue'
-import AcademicYears from '@/components/AcademicYears.vue'
-import Divisions from '@/components/Divisions.vue'
-import Grades from '@/components/Grades.vue'
-import Classes from '@/components/Classes.vue'
-import Buses from '@/components/Buses.vue'
-import Languages from '@/components/Languages.vue'*/
-//import FormSaveResetBtns from '@/components/FormSaveResetBtns.vue'
-import MaritalStatus from '@/components/MaritalStatus.vue'
 import axios from 'axios';
 export default {
     name: 'Admission',
     components : {
-        /*FormSaveResetBtns,Gender,Nationality,Religions,AcademicYears,Divisions,Grades,Classes,Buses,Languages,*/MaritalStatus
+        
     },
     data: function () {
         return {
@@ -625,7 +614,7 @@ export default {
         "first_name_ar": "quia",
         "middle_name_ar": "sapiente",
         "last_name_ar": "repellendus",
-        "marital_status_id": 8,
+        //"marital_status_id": 8,
         "university": "soluta",
         "occupation": "ipsa",
         "employer": "veniam",
@@ -646,7 +635,7 @@ export default {
         "first_name_ar": "voluptas",
         "middle_name_ar": "earum",
         "last_name_ar": "vel",
-        "marital_status_id": 9,
+        //"marital_status_id": 9,
         "university": "assumenda",
         "occupation": "nostrum",
         "employer": "dolorem",
