@@ -32,25 +32,14 @@
     <div class="main">
 
         <div class="container">
-            <form method="POST" id="signup-form" class="signup-form new-added-form" action="#">
+            
+              <form v-on:submit="submitAdmissionForm" id="signup-form" class="signup-form new-added-form">
                 <div>
                     <h3>Student Information</h3>
                     <fieldset>
                         <h2>Student Information</h2>
                         <p class="desc">Please enter your infomation and proceed to next step so we can build your account</p>
-                        <div class="fieldset-content">
-                            <form class="new-added-form">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>Application ID</label>
-                                    <input type="text" placeholder="" class="form-control">
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>School ID</label>
-                                    <input type="text" placeholder="" class="form-control">
-                                </div>
-								</div>
-								<div class="row">
+                        <div class="fieldset-content"><div class="row">
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>First Name <span class="text-red">*</span></label>
                                     <input type="text" placeholder="" class="form-control" name="first_name_en" v-model="form.student.first_name_en" required>
@@ -63,6 +52,21 @@
                                     <label>Family Name <span class="text-red">*</span></label>
                                     <input type="text" placeholder=""  name="last_name_en" v-model="form.student.last_name_en" class="form-control" required>
                                 </div>
+
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>First Name  (Arabic) <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" class="form-control" name="first_name_ar" v-model="form.student.first_name_ar" required>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Second Name  (Arabic) <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" name="middle_name_ar" v-model="form.student.middle_name_ar" class="form-control" required>
+                                </div>
+								<div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Family Name  (Arabic) <span class="text-red">*</span></label>
+                                    <input type="text" placeholder="" name="last_name_ar" v-model="form.student.last_name_ar" class="form-control" required>
+                                </div>
+                                
+                                                                
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Gender <span class="text-red">*</span></label>
                                     <select class="" name="gender_id" v-model="form.student.gender_id">
@@ -84,6 +88,10 @@
                                         <option :key="religion.id" v-for="religion in religions" :value="religion.id">{{ religion.name }}</option>                                       
                                     </select>
                                 </div>
+                               <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>National Number <span class="text-red">*</span></label>
+                                    <input type="text" name="national_no" v-model="form.student.national_no" class="form-control" required>
+                                </div> 
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Date Of Birth <span class="text-red">*</span></label>
                                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
@@ -98,6 +106,10 @@
                                     <label>Residential Address <span class="text-red">*</span></label>
                                     <input type="text" placeholder="" class="form-control" name="address" v-model="form.student.address" required>
                                 </div>
+                <div class="col-xl-4 col-lg-6 col-12 form-group">
+                    <label>City <span class="text-red">*</span></label>
+                    <input type="text" placeholder="" class="form-control" name="city" v-model="form.student.city" required>
+                </div>                
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Mailing Address <span class="text-red">*</span></label>
                                     <input type="text" placeholder="" class="form-control">
@@ -111,10 +123,10 @@
                                     <label>Communication Mobile</label>
                                    <input type="tel" id="phone" class="form-control" name="mobile"  v-model="form.student.mobile" required>
                                 </div>
-								<div class="col-xl-4 col-lg-6 col-12 form-group">
+								<!-- <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Custodial Parent Name</label>
                                     <input type="txt" placeholder="" class="form-control" name="custody" v-model="form.student.custody" required>
-                                </div>
+                                </div> -->
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>language Spoken At Home <span class="text-red">*</span></label>
                                     <select name="lang_id" class="" v-model="form.student.lang_id">
@@ -143,13 +155,13 @@
                                         <option :key="academic_year.id" v-for="academic_year in academic_years" :value="academic_year.id">{{ academic_year.name }}</option>                                       
                                     </select>
                                 </div>
-								<div class="col-xl-4 col-lg-6 col-12 form-group">
+								<!--<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Class <span class="text-red">*</span></label>
                                     <select name="class_id" class="" v-model="form.student.class_id">
                                         <option value="">Please Select Class *</option>
                                         <option :key="one_class.id" v-for="one_class in classes" :value="one_class.id">{{ one_class.name }}</option>                                     
                                     </select>
-                                </div>
+                                </div> -->
 								<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Registration Year <span class="text-red">*</span></label>
                                     <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
@@ -211,7 +223,7 @@
 								
 								</div>
                             </div>
-                        </form>
+                       
                         </div>
                     </fieldset>
                     <h3>Parents information</h3>
@@ -532,8 +544,6 @@
     </div>
 </div>
 </template>
-
-
 <script>
 // @ is an alias to /src
 /*import Gender from '@/components/Gender.vue'
@@ -561,7 +571,7 @@ export default {
             academic_years: [],
             languages: [],
             buses: [],
-            classes: [],
+            //classes: [],
             grades: [],
             divisions: [],            
             parentType : ['father','mother'] ,
@@ -577,12 +587,12 @@ export default {
         "last_name_ar": "est",
         "division_id": 5,
         "grade_id": 5,
-        "class_id": 6,
+        //"class_id": 6,
         "national_no": "earum",
         "passport_no": "repellat",
         "birth_date": "1999-05-24",
         "birth_place": "illum",
-        "october_age_date": "2009-05-10",
+        //"october_age_date": "2009-05-10",
         "academic_year_applying_id": 6,
         "nationality_id": 5,
         "gender_id": 8,
@@ -605,7 +615,7 @@ export default {
         "referance_email": "alias@ggg.com",
         "referance_phone": "ut",
         "enroll_date": "2020-09-04",
-        "custody": "et",
+        //"custody": "et",
         "foreigner": 0,
         "egy_returning": 1,
         "transfer_from_cairo": 0,
@@ -676,10 +686,11 @@ export default {
         this.getReligions()
         this.getLanguages()
         this.getBuses()
-        this.getClasses()
+        //this.getClasses()
         this.getGrades()  
         this.getDivisions() 
-        this.getAcademicYear()      
+        this.getAcademicYear()
+        
        //this.formType === 'edit'? this.GetStudentData() : ''
   },
     methods: {
