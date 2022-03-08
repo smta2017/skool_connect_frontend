@@ -295,10 +295,6 @@
                     <label>Class Off *</label>
                     <input type="text" placeholder="" class="form-control" name="class_off" v-model="form.parent1.class_off">
                 </div>
-				<div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Type *</label>
-                    <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent1.type">
-                </div>
                 <div class="col-3 col-lg-6 col-12 form-group">
                     <label>School</label>
                     <input type="text" placeholder="" class="form-control" name="school" v-model="form.parent1.school">
@@ -384,10 +380,6 @@
 				<div class="col-xl-4 col-lg-6 col-12 form-group">
                     <label>Class Off *</label>
                     <input type="text" placeholder="" class="form-control" name="class_off" v-model="form.parent2.class_off">
-                </div>
-				<div class="col-xl-4 col-lg-6 col-12 form-group">
-                    <label>Type *</label>
-                    <input type="text" placeholder="" class="form-control" name="type" v-model="form.parent2.type">
                 </div>
                 <div class="col-3 col-lg-6 col-12 form-group">
                     <label>School</label>
@@ -643,7 +635,7 @@ export default {
         "business_email": "libero@gh.com",
         "alumni": 1,
         "class_off": "necessitatibus",
-        "type": "voluptas",
+        //"type": "voluptas",
         "school": "sit"
       },
       "parent2": {
@@ -664,7 +656,7 @@ export default {
         "business_email": "libero@gh.com",
         "alumni": 1,
         "class_off": "aut",
-        "type": "aut",
+       // "type": "aut",
         "school": "exercitationem"
       },
       "student_id" : "0","parent1_id" : "0","parent2_id" : "0","admission_status_id" : "0"
